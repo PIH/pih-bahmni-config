@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="procedures/procedures.xml" relativeToChangelogFile="true"/>
+    <include file="core-users.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="pih-concepts" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/occupation_coded_question.sql"/>
+    </changeSet>
+    <changeSet id="pih-fee-information" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/fee_information_concept_set.sql"/>
+    </changeSet>
+    <changeSet id="pih-reason-for-visit" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/reason_for_visit_concept_set.sql"/>
+    </changeSet>
+    <changeSet id="pih-vitals" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/vitals.sql"/>
+    </changeSet>
+    <changeSet id="pih-physical-exam" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/physical_exam.sql"/>
+    </changeSet>
+    <changeSet id="pih-screening" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/screening.sql"/>
+    </changeSet>
+    <changeSet id="pih-history-form" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/history_form.sql"/>
+    </changeSet>
+    <changeSet id="pih-diagnoses" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/diagnoses.sql"/>
+    </changeSet>
+    <changeSet id="pih-orders" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/orders.sql"/>
+    </changeSet>
+    <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/locations.sql"/>
+    </changeSet>
+    <changeSet id="pih-identifiers" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/patient_identifiers.sql"/>
+    </changeSet>
+    <changeSet id="pih-person-attribute-type" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/person_attribute_types.sql"/>
+    </changeSet>
+    <changeSet id="pih-visit-type" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/visits.sql"/>
+    </changeSet>
+    <changeSet id="pih-global-properties" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/global_properties.sql"/>
+    </changeSet>
+    <changeSet id="pih-test-users" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/test_users.sql"/>
+    </changeSet>
+    <include file="expire-visits.xml" />
+</databaseChangeLog>

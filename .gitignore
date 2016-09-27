@@ -1,0 +1,4 @@
+.DS_Store
+wellbody-config/.idea
+*.iml
+.vagrant

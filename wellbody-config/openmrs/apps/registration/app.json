@@ -1,0 +1,67 @@
+{
+        "id": "bahmni.registration",
+        "instanceOf":"bahmni.template.registration",
+        "description": "Bahmni Patient Registration App",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.registration.patient.search.result.action",
+                "description": "Bahmni Patient Search Result Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.next",
+                "description": "After Bahmni Patient Registration, forward url configuration"
+            }
+        ],
+        "contextModel": [
+            "patientUuid",
+            "activeVisitUuid"
+        ],
+        "config" : {
+            "autoCompleteFields":["familyName"],
+            "defaultIdentifierPrefix": "WBA",
+            "defaultVisitType": "OPD",
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+            "showMiddleName": false,
+            "showCasteSameAsLastNameCheckbox": false,
+            "showBirthTime": false,
+            "afterVisitSaveForwardUrl": "#/search",
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": true,
+                "freeTextAddressFields": ["address2"]
+            },
+            "printOptions": [
+                {
+                    "label": "<u>P</u>rint Label",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/idcard/idcard.html",
+                    "shortcutKey": "P"
+                }
+            ],
+            "conceptSetUI": {
+                "Payment type": {
+                    "required": false
+                },
+                "Payment received": {
+                    "required": false
+                },
+                "Patient category" : {
+                    "required": false,
+                    "multiSelect": true
+                },
+                "Type of visit": {
+                    "required": false,
+                    "multiSelect": true
+                }
+            },
+            "fieldValidation" : {
+                "familyName" : {"pattern" : "[a-zA-Z -]{0,}", "errorMessage" : "Last Name should contain characters"},
+                "givenName" : {"pattern" : "[a-zA-Z -]{0,}", "errorMessage" : "First Name should contain characters"}
+            },
+            "patientSearch": {
+                "customAttributes": {
+                    "label": "WBA Paper ID",
+                    "fields": ["WBA Paper ID"]
+                },
+                "searchByPatientIdentifier": true
+            }
+        }
+}

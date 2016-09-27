@@ -1,0 +1,28 @@
+{
+    "id": "bahmni.orders",
+    "extensionPoints": [
+      {
+          "id": "org.bahmni.orders.search",
+          "description": "Orders Dashboard"
+      }
+    ],
+    "config" : {
+      "maxConceptSetLevels": 3,
+      "conceptSetUI": {
+        "Grid1": {
+          "grid": true
+        },
+        "Coded3": {
+          "multiSelect": true
+        }
+      },
+      "sections": {
+        "title": "Lab Order FulFillment Form",
+        "name": "Lab Results",
+        "isObservation": true,
+        "conceptNames": ["Lab Order Notes"],
+        "numberOfVisits": 2,
+        "scope": "latest"
+      }
+    }
+}

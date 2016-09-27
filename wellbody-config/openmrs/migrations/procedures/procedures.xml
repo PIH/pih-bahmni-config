@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Set up stored procedures for use in configuring the system
+-->
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="ensure_user" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_user procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_user;</sql>
+        <sqlFile path="ensure_user.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_provider" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_provider procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_provider;</sql>
+        <sqlFile path="ensure_provider.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_user_roles" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_user_roles procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_user_roles;</sql>
+        <sqlFile path="ensure_user_roles.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_role_privilege" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_role_privilege procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_role_privilege;</sql>
+        <sqlFile path="ensure_role_privilege.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_location" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_location procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_location;</sql>
+        <sqlFile path="ensure_location.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_location_has_tag" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_location_has_tag procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_location_has_tag;</sql>
+        <sqlFile path="ensure_location_has_tag.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_global_property" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_global_property procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_global_property;</sql>
+        <sqlFile path="ensure_global_property.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_patient_identifier_type" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_patient_identifier_type procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_patient_identifier_type;</sql>
+        <sqlFile path="ensure_patient_identifier_type.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_idgen_identifier_source" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_idgen_identifier_source procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_idgen_identifier_source;</sql>
+        <sqlFile path="ensure_idgen_identifier_source.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_person_attribute_type" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_person_attribute_type procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_person_attribute_type;</sql>
+        <sqlFile path="ensure_person_attribute_type.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_visit_type" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_visit_type procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_visit_type;</sql>
+        <sqlFile path="ensure_visit_type.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_concept" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create concept procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept;</sql>
+        <sqlFile path="ensure_concept.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_concept_answer" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_concept_answer procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept_answer;</sql>
+        <sqlFile path="ensure_concept_answer.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_concept_numeric" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_concept_numeric procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept_numeric;</sql>
+        <sqlFile path="ensure_concept_numeric.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+    <changeSet id="ensure_concept_set_members" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_concept_set_members procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept_set_members;</sql>
+        <sqlFile path="ensure_concept_set_members.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
+</databaseChangeLog>

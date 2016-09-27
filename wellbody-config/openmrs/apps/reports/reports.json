@@ -1,0 +1,16 @@
+{
+    "genericRegistrationReport":{
+        "name": "Registration Report",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/wbaRegistrationReport.sql"
+        }
+    },
+    "genericVisitReport":{
+        "name": "Visit Report",
+        "type": "MRSGeneric",
+        "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/wbaVisitReport.sql"
+        }
+    }
+}
