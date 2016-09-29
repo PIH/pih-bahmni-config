@@ -2,3 +2,4 @@
 wellbody-config/.idea
 *.iml
 .vagrant
+.idea
