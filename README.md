@@ -1,6 +1,6 @@
 # pih-bahmni-config
 
-Contains relevant customizations of Bahmni for the Wellbody Clinic in Sierra Leone. 
+Contains relevant customizations for the various PIH implementations of Bahmni
 
 
 ## Steps for applying a patch to our custom version of the Bahmni-App modules
