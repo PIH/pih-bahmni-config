@@ -6,7 +6,7 @@
         "type": "link",
         "translationKey": "MODULE_LABEL_REGISTRATION_KEY",
         "url": "../registration/",
-        "icon": "fa-stethoscope",
+        "icon": "icon-bahmni-registration",
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
