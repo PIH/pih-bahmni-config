@@ -3,7 +3,7 @@ customValidator = {
         method: function (name, value) {
             return value >= 0;
         },
-        errorMessage: "Age should be a possitive value"
+        errorMessage: "Age should be a positive value"
     },
     "Telephone Number": {
         method: function (name, value, personAttributeDetails) {

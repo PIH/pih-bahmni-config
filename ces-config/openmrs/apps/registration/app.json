@@ -18,7 +18,7 @@
         ],
         "config" : {
             "autoCompleteFields":["familyName"],
-            "defaultIdentifierPrefix": "WBA",
+            "defaultIdentifierPrefix": "CES",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
@@ -65,8 +65,8 @@
             },
             "patientSearch": {
                 "customAttributes": {
-                    "label": "WBA Paper ID",
-                    "fields": ["WBA Paper ID"]
+                    "label": "Expediente SSA",
+                    "fields": ["Expediente SSA"]
                 }
             }
         }
