@@ -17,13 +17,13 @@
             "activeVisitUuid"
         ],
         "config" : {
-            "showBirthTime": false,
             "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "CES",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": false,
+            "showBirthTime": false,
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["address1", "address2"]
