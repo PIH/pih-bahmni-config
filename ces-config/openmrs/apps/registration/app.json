@@ -17,6 +17,7 @@
             "activeVisitUuid"
         ],
         "config" : {
+            "showBirthTime": false,
             "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "CES",
             "defaultVisitType": "OPD",
@@ -27,24 +28,7 @@
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["address1", "address2"]
             },
-            "printOptions": [
-                {
-                    "label": "Print Reg. Card (<u>L</u>ocal)",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
-                {
-                    "label": "<u>P</u>rint Registration Card",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-                    "shortcutKey": "p"
-                },
-                {
-                    "label": "P<u>r</u>int Supplemental Paper",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                }
-            ],
-            "conceptSetUI": {
+           "conceptSetUI": {
                 "Payment type": {
                     "required": false
                 },
