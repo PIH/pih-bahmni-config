@@ -42,39 +42,5 @@
         },
         "order": 1,
         "requiredPrivilege": "RegisterAndConsult"
-    },
-    "feeInformation":{
-        "id": "bahmni.registration.conceptSetGroup.feeInformation",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Fee Information",
-            "required":true
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
-    "patientCategory":{
-        "id": "bahmni.registration.conceptSetGroup.patientCategory",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Patient category construct",
-            "required":true
-        },
-        "order": 2,
-        "requiredPrivilege": "Edit Visits"
-    },
-    "typeVisit":{
-        "id": "bahmni.registration.conceptSetGroup.typeVisit",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Type of visit construct",
-            "required":true
-        },
-        "order": 3,
-        "requiredPrivilege": "Edit Visits"
     }
-
-}
+   }
