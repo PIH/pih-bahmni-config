@@ -28,22 +28,7 @@
                 "showAddressFieldsTopDown": true,
                 "freeTextAddressFields": ["address1", "address2"]
             },
-           "conceptSetUI": {
-                "Payment type": {
-                    "required": false
-                },
-                "Payment received": {
-                    "required": false
-                },
-                "Patient category" : {
-                    "required": false,
-                    "multiSelect": true
-                },
-                "Type of visit": {
-                    "required": false,
-                    "multiSelect": true
-                }
-            },
+
             "fieldValidation" : {
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
             },
