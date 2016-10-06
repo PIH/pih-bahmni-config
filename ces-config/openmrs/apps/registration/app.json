@@ -36,7 +36,8 @@
                 "customAttributes": {
                     "label": "Expediente SSA",
                     "fields": ["Expediente SSA"]
-                }
+                },
+              "searchByPatientIdentifier": true
             }
         }
 }
