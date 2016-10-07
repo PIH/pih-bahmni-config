@@ -34,4 +34,7 @@
     <changeSet id="pih-religion-coded-question" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/religion_coded_question.sql"/>
     </changeSet>
+    <changeSet id="pih-patient-category" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/patient_category.sql"/>
+    </changeSet>
 </databaseChangeLog>
