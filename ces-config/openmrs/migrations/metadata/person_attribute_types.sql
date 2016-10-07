@@ -8,6 +8,10 @@ call ensure_person_attribute_type('telephoneNumber', 'Telephone Number', 'java.l
 call ensure_person_attribute_type('Expediente_SSA', 'Expediente SSA', 'java.lang.String', NULL, 1, 1,
     0, NULL, NULL, NULL, 2, 'ac6d9ae7-daf6-4a3c-848d-39d7f38656af');
 
+-- Contact Name
+call ensure_person_attribute_type('contactName', 'Contact Name', 'java.lang.String', NULL, 1, 1,
+    0, NULL, NULL, NULL, 2, '7e096db4-4727-4417-a83a-fb0c6ef13930');
+
 -- retire givenNameLocal
 call ensure_person_attribute_type('givenNameLocal', 'First name in local language', 'java.lang.String', NULL, 0, 1,
     1, 1, now(), 'remove from registration screen', 5, '7e6db4ea-e42f-11e5-8c3e-08002715d519');
