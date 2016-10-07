@@ -25,4 +25,7 @@
     <changeSet id="pih-person-attribute-types" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/person_attribute_types.sql"/>
     </changeSet>
+    <changeSet id="pih-occupation-coded-questions" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/occupation_coded_questions.sql"/>
+    </changeSet>
 </databaseChangeLog>
