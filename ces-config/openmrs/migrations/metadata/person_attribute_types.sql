@@ -10,7 +10,15 @@ call ensure_person_attribute_type('Expediente_SSA', 'Expediente SSA', 'java.lang
 
 -- Contact Name
 call ensure_person_attribute_type('contactName', 'Contact Name', 'java.lang.String', NULL, 1, 1,
-    0, NULL, NULL, NULL, 2, '7e096db4-4727-4417-a83a-fb0c6ef13930');
+    0, NULL, NULL, NULL, 3, '3cd997f2-26fe-102b-80cb-0017a47871b2');
+
+-- Contact Relationship
+call ensure_person_attribute_type('contactRelationship', 'Contact Relationship', 'java.lang.String', NULL, 1, 1,
+    0, NULL, NULL, NULL, 4, '3cd99a68-26fe-102b-80cb-0017a47871b2');
+
+-- Contact Phone Number
+call ensure_person_attribute_type('contactPhone', 'Contact Phone Number', 'java.lang.String', NULL, 1, 1,
+    0, NULL, NULL, NULL, 5, '276f8057-55a4-4b1c-8915-69ad090fcffb');
 
 -- retire givenNameLocal
 call ensure_person_attribute_type('givenNameLocal', 'First name in local language', 'java.lang.String', NULL, 0, 1,
