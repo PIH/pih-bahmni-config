@@ -32,6 +32,13 @@
 
             "fieldValidation" : {
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
-            }
+            },
+            "patientSearch": {
+              "customAttributes": {
+                "label": "Expediente SSA",
+                "fields": ["Expediente SSA"]
+             },
+            "searchByPatientIdentifier": true
+          }
         }
 }
