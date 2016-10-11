@@ -36,7 +36,7 @@
             "patientSearch": {
               "customAttributes": {
                 "label": "Expediente SSA",
-                "fields": ["Expediente SSA"]
+                "fields": ["Expediente_SSA"]
              },
             "searchByPatientIdentifier": true
           }
