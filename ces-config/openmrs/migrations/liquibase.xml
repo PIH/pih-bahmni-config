@@ -38,6 +38,6 @@
         <sqlFile path="metadata/patient_category.sql"/>
     </changeSet>
     <changeSet id="pih-patient-category" author="PIH" runAlways="true" runOnChange="true">
-        <sqlFile path="metadata/reason_for_visit_concept.sql"/>
+        <sqlFile path="metadata/reason_for_visit_concept_set.sql"/>
     </changeSet>
 </databaseChangeLog>
