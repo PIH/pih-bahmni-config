@@ -42,5 +42,16 @@
         },
         "order": 1,
         "requiredPrivilege": "RegisterAndConsult"
+    },
+    "typeVisit":{
+        "id": "bahmni.registration.conceptSetGroup.typeVisit",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Type of visit construct",
+            "required":true
+        },
+        "order": 3,
+        "requiredPrivilege": "Edit Visits"
     }
    }
