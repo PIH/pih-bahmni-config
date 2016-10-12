@@ -29,7 +29,7 @@
         "icon": "fa-tasks",
         "order": 2,
         "requiredPrivilege": "app:clinical"
-    }
+    },
     "orders": {
         "id": "bahmni.orders",
         "extensionPointId": "org.bahmni.home.dashboard",
