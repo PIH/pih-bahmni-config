@@ -1,0 +1,140 @@
+{
+    "visit":{
+        "translationKey": "Visit",
+        "displayByDefault": true,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Visit",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "sections": {
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "displayOrder": 0,
+                "config": {
+                    "title": "PatientInformation",
+                    "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                    "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"]
+                }
+            },
+            "diagnoses":{
+                "type": "diagnosis",
+                "displayOrder": 1,
+                "config": {
+                    "translationKey" : "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                    "showCertainty": false,
+                    "showOrder": false,
+                    "showDetailsButton": true
+                }
+            },
+            "disposition": {
+                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "type": "disposition",
+                "displayOrder": 2,
+                "config": {
+                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY"
+                }
+            },
+            "Treatments": {
+                "type": "treatment",
+                "displayOrder": 3,
+                "config": {
+                    "translationKey": "VISIT_TITLE_TREATMENTS_KEY",
+                    "showFlowSheet": true,
+                    "showListView": true,
+                    "showOtherActive": false,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "showProvider":false
+                }
+            },
+            "vitals":{
+                "type": "observation",
+                "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                "displayOrder": 4,
+                "config": {
+                    "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "scope": "latest"
+                }
+            },
+            "labOrders":{
+                "type":"order",
+                "displayOrder": 5,
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+                "config":{
+                    "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+                    "orderType": "Lab Order"
+                }
+            },
+            "historyAndExaminations":{
+                "type": "observation",
+                "displayOrder": 6,
+                "translationKey": "CONSULTATION_PAGE_KEY",
+                "config": {
+                    "conceptNames": [
+                        "Consultation"
+                    ],
+                    "scope": "latest",
+                    "numberOfVisits": "1"
+                }
+            }
+        }
+    },
+    "general":{
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "displayByDefault": false,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Visit",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "defaultSections": true,
+        "sections": {
+            "pivotTable":{
+                "type": "pivotTable",
+                "displayOrder": 0,
+                "title": "Vitals Flowsheet",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Pulse",
+                        "Diastolic",
+                        "Systolic",
+                        "Temperature",
+                        "RR",
+                        "SPO2",
+                        "Height",
+                        "WEIGHT",
+                        "M/C Days"
+                    ],
+                    "labConcepts": ""
+                }
+            }
+        }
+    },
+    "orders":{
+        "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
+        "sections": {
+            "Radiology Orders": {
+                "type": "order",
+                "displayOrder": 0,
+                "translationKey": "Radiology Orders",
+                "config": {
+                    "translationKey": "Radiology Orders",
+                    "name": "ordersControl",
+                    "orderType": "Radiology Order",
+                    "conceptNames": [
+                        "Summary"
+                    ]
+                }
+            }
+        }
+
+    }
+}
