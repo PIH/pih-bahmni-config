@@ -12,10 +12,10 @@ set @program_id = 0;
 call ensure_concept(@concept_id, '2b04ef90-4bbc-40fb-82d5-334933cc85bb', 'Mental Health Program','Mental Health Program', 'N/A', 'Misc', false);
 
 -- add Mental Health program, referring to the concept just added
-call ensure_program(@program_id,'8809f43e-6d58-4142-8f0d-b6974ce2f11d','Mental Health Program','Mental Health Program',@concept_id)
+call ensure_program(@program_id,'8809f43e-6d58-4142-8f0d-b6974ce2f11d','Mental Health Program','Mental Health Program',@concept_id);
 
 -- Add treatment status program concept
-call ensure_concept(@concept_id, '8c69ffc8-1cac-4278-9725-fa9e6ae5063f', 'Treamtent Status','Tx Status', 'N/A', 'Workflow', false);
+call ensure_concept(@concept_id, '8c69ffc8-1cac-4278-9725-fa9e6ae5063f', 'Treatment Status','Tx Status', 'N/A', 'Workflow', false);
 
 -- Set of mental Health Statuses
 call ensure_concept(@concept_id, '7ed83a25-0394-445e-a5e3-bf4441823932', 'Mental Health Program States','Mental Health Program States', 'Coded', 'Workflow', false);
