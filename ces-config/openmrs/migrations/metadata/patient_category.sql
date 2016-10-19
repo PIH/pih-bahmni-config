@@ -35,4 +35,4 @@ call ensure_concept_answer (@parent_concept_id, @child_concept_id, 4);
 -- Discapacidad
 call ensure_concept(@concept_id, '9e9b62db-027c-4a97-b02b-0917c364a8fa', 'Discapacidad','Discapacidad', 'N/A', 'Misc', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 4);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 5);
