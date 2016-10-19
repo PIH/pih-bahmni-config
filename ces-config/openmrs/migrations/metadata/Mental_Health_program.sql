@@ -18,6 +18,9 @@ call ensure_program(@program_id,'8809f43e-6d58-4142-8f0d-b6974ce2f11d','Mental H
 -- Add treatment status program concept
 call ensure_concept(@concept_id, '8c69ffc8-1cac-4278-9725-fa9e6ae5063f', 'Treatment Status','Tx Status', 'N/A', 'Workflow', false);
 
+-- Add Program Workflow, referring to the program state concept just added
+call ensure_program_workflow(@program_workflow_id, '79867b53-9e2a-4dcb-900f-f0216401fd00', @program_id, @concept_id);
+
 -- Set of mental Health Statuses
 call ensure_concept(@concept_id, '7ed83a25-0394-445e-a5e3-bf4441823932', 'Mental Health Program States','Mental Health Program States', 'Coded', 'Workflow', false);
 set @parent_concept_id = @concept_id;
@@ -26,9 +29,6 @@ set @parent_concept_id = @concept_id;
 call ensure_concept(@concept_id, '65664784-977f-11e1-8993-905e29aff6c1', 'On treatment','On treatment', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
-
--- Add Program Workflow, referring to the program state concept just added
-call ensure_program_workflow(@program_workflow_id, '79867b53-9e2a-4dcb-900f-f0216401fd00', @program_id, @concept_id);
 
 -- Add Patient transferred out program state concept
 call ensure_concept(@concept_id, '655b604e-977f-11e1-8993-905e29aff6c1', 'Patient transferred out','Patient transferred out', 'N/A', 'State', false);
