@@ -15,7 +15,7 @@ BEGIN
   IF ( _program_workflow_id IS NULL ) THEN
 
     INSERT INTO program_workflow (program_id, concept_id, creator, date_created, changed_by, date_changed, uuid)
-        values (program_id, program_concept_id, 1, now(), 1, now(), _program_uuid);
+        values (program_id, program_concept_id, 1, now(), 1, now(), _program_workflow_uuid);
       SELECT MAX(program_workflow_id) INTO _program_workflow_id FROM program_workflow;
 
   END IF;
