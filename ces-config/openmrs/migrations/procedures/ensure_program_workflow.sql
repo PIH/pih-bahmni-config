@@ -3,7 +3,7 @@
 CREATE PROCEDURE ensure_program_workflow (
                                 INOUT new_program_workflow_id INT,
                                 _program_workflow_uuid CHAR(38),
-                                program_id,
+                                program_id INT,
                                 program_concept_id INT
                                 )
 BEGIN
