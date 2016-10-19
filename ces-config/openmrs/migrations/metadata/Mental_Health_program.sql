@@ -6,6 +6,7 @@ set @answer_concept_id = 0;
 set @concept_name_short_id = 0;
 set @concept_name_full_id = 0;
 set @program_id = 0;
+set @program_workflow_id = 0;
 
 
 -- Add Mental Health program concept
@@ -25,6 +26,9 @@ set @parent_concept_id = @concept_id;
 call ensure_concept(@concept_id, '65664784-977f-11e1-8993-905e29aff6c1', 'On treatment','On treatment', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+
+-- Add Program Workflow, referring to the program state concept just added
+call ensure_program_workflow(@program_workflow_id, '79867b53-9e2a-4dcb-900f-f0216401fd00', @program_id, @concept_id);
 
 -- Add Patient transferred out program state concept
 call ensure_concept(@concept_id, '655b604e-977f-11e1-8993-905e29aff6c1', 'Patient transferred out','Patient transferred out', 'N/A', 'State', false);
