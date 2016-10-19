@@ -5,10 +5,14 @@ set @concept_id = 0;
 set @answer_concept_id = 0;
 set @concept_name_short_id = 0;
 set @concept_name_full_id = 0;
+set @program_id = 0;
 
 
 -- Add Mental Health program concept
 call ensure_concept(@concept_id, '2b04ef90-4bbc-40fb-82d5-334933cc85bb', 'Mental Health Program','Mental Health Program', 'N/A', 'Misc', false);
+
+-- add Mental Health program, referring to the concept just added
+call ensure_program(@program_id,'8809f43e-6d58-4142-8f0d-b6974ce2f11d','Mental Health Program','Mental Health Program',@concept_id)
 
 -- Add treatment status program concept
 call ensure_concept(@concept_id, '8c69ffc8-1cac-4278-9725-fa9e6ae5063f', 'Treamtent Status','Tx Status', 'N/A', 'Workflow', false);
