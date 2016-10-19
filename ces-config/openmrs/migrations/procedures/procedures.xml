@@ -100,4 +100,10 @@
         <sqlFile path="ensure_concept_set_members.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_program" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_program procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_program;</sql>
+        <sqlFile path="ensure_program.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
+
 </databaseChangeLog>
