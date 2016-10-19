@@ -8,8 +8,6 @@ CREATE PROCEDURE ensure_program (
                                 program_concept_id INT
                                 )
 BEGIN
-  DECLARE data_type_id INT;
-  DECLARE class_id INT;
   DECLARE _program_id INT;
 
 

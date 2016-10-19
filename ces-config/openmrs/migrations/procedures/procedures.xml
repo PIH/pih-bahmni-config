@@ -106,4 +106,9 @@
         <sqlFile path="ensure_program.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
 
+    <changeSet id="ensure_program_workflow" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_program_workflow procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_program_workflow;</sql>
+        <sqlFile path="ensure_program_workflow.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>
