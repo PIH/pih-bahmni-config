@@ -118,14 +118,6 @@
             "observationDisplay": {
                 "conceptNames": []
             }
-        },
-        "programDisplayControl": {
-            "showProgramStateInTimeline": true,
-            "programAttributes": [
-                "Treatment_Date",
-                "Doctor",
-                "Id"
-            ]
         }
     }
 }

@@ -25,24 +25,24 @@ call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
 -- Add Patient transferred out program state concept
 call ensure_concept(@concept_id, '655b604e-977f-11e1-8993-905e29aff6c1', 'Patient transferred out','Patient transferred out', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 2);
 
 -- Add Patient died program state concept
 call ensure_concept(@concept_id, '655b5e46-977f-11e1-8993-905e29aff6c1', 'Patient died','Patient died', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 3);
 
 -- Add Discharged program state concept
 call ensure_concept(@concept_id, '6566dba4-977f-11e1-8993-905e29aff6c1', 'Discharged','Discharged', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 4);
 
 -- Add Patient defaulted program state concept
 call ensure_concept(@concept_id, '655b5f4a-977f-11e1-8993-905e29aff6c1', 'Patient defaulted','Patient defaulted', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 5);
 
 -- Add Treatment stopped program state concept
 call ensure_concept(@concept_id, '655a6acc-977f-11e1-8993-905e29aff6c1', 'Treatment stopped','Treatment stopped ', 'N/A', 'State', false);
 set @child_concept_id = @concept_id;
-call ensure_concept_answer (@parent_concept_id, @child_concept_id, 1);
+call ensure_concept_answer (@parent_concept_id, @child_concept_id, 6);
