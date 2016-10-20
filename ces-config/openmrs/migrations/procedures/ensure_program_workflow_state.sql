@@ -14,7 +14,7 @@ BEGIN
 
   IF ( _program_workflow_state_id IS NULL ) THEN
 
-    INSERT INTO program_workflow_state (program_workflow_id, concept_id, intial, terminal, creator, date_created, changed_by, date_changed, uuid)
+    INSERT INTO program_workflow_state (program_workflow_id, concept_id, initial, terminal, creator, date_created, changed_by, date_changed, uuid)
         values (program_workflow_id, program_state_concept_id,initial_state, terminal_state, 1, now(), 1, now(), _program_workflow_state_uuid);
 
   END IF;
