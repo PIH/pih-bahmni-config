@@ -43,4 +43,7 @@
     <changeSet id="pih-Mental-Health-program" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/Mental_Health_program.sql"/>
     </changeSet>
+    <changeSet id="pih-HIV-program" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/HIV_program.sql"/>
+    </changeSet>
 </databaseChangeLog>
