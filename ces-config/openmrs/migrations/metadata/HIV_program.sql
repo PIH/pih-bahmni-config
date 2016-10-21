@@ -5,7 +5,7 @@ set @answer_concept_id = 0;
 set @program_id = 0;
 
 -- Add treatment status program concept
-call ensure_concept(@concept_id, '8c69ffc8-1cac-4278-9725-fa9e6ae5063f', 'Treatment Status','Tx Status', 'N/A', 'Workflow', false);
+call ensure_concept(@concept_id, '8c69ffc8-1cac-4278-9725-fa9e6ae5063f', 'Treatment Status','Tx Status', 'N/A', 'Misc', false);
 
 -- Set of HIV Program Statuses
 call ensure_concept(@concept_id, '754d7cef-aa86-472c-b57e-c301dc368766', 'HIV Program Outcomes','HIV Program Outcomes', 'N/A', 'ConvSet', true);
