@@ -78,5 +78,11 @@ Steps:
 3) Resolve conflicts and push this new local branch release-x up to the *PIH* repo
 
 
-
-
+git clone https://github.com/PIH/openmrs-module-bahmniapps.git
+cd openmrs-module-bahmniapps
+git remote add upstream https://github.com/Bahmni/openmrs-module-bahmniapps.git
+git fetch --all
+git branch release-0.85 upstream/release-0.85
+git checkout release-0.85
+git pull --rebase upstream release-0.85
+git push origin release-0.85
