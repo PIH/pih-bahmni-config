@@ -126,6 +126,12 @@
                     "pivotTable": {}
                 }
             },
+            "programs": {
+                "title":"Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 8
+            },
             "labOrdersDisplayControl": {
                 "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "type": "ordersControl",
