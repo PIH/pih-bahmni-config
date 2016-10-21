@@ -42,7 +42,7 @@ set @child_concept_id = @concept_id;
 call ensure_concept_answer (@parent_concept_id, @child_concept_id, 6);
 
 -- Add HIV program concept
-call ensure_concept(@concept_id, '6e07060c-af67-4ef5-9958-417c313fe3c5', 'HIV Program2','HIV Program2', 'N/A', 'Misc', false);
+call ensure_concept(@concept_id, '6e07060c-af67-4ef5-9958-417c313fe3c5', 'HIV Program','HIV Program', 'N/A', 'Misc', false);
 
 -- add HIV program, referring to the concept just added
-call ensure_program(@program_id,'59d95d1d-cc6d-41f5-a431-825688823782','HIV Program2','HIV Program2',@concept_id,@parent_concept_id);
+call ensure_program(@program_id,'59d95d1d-cc6d-41f5-a431-825688823782','HIV Program','HIV Program',@concept_id,@parent_concept_id);
