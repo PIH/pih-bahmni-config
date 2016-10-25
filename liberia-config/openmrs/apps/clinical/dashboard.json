@@ -1,0 +1,217 @@
+{
+    "general": {
+        "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "navigationLinksControl": {
+                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type": "navigationLinksControl",
+                "displayOrder": 0,
+                "customLinks": [
+                    {
+                        "translationKey": "HOME_DASHBOARD_KEY",
+                        "url": "../home/#/dashboard"
+                    },
+                    {
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
+                        "translationKey": "PATIENT_VISIT_PAGE_KEY"
+                    },
+                    {
+                        "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
+                        "url": "../orders/#/patient/{{patientUuid}}/fulfillment/Lab%20Order"
+                    },
+                    {
+                        "translationKey": "CONSULTATION_PAGE_KEY",
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
+                    }
+                ]
+            },
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "displayOrder": 2,
+                "ageLimit": 100,
+                "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"],
+                "addressFields": [
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countryDistrict"
+                ]
+            },
+            "diagnosis": {
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "type": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "showDetailsButton": true,
+                "displayOrder": 1
+            },
+            "visits": {
+                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+                "type": "visits",
+                "displayOrder": 4,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 8,
+                    "groupByVisits": true
+                }
+            },
+            "medicationDetails": {
+                "translationKey": "DASHBOARD_TITLE_ACTIVE_MEDICATIONS",
+                "type": "drugOrderDetails",
+                "showDetailsButton" : true,
+                "displayOrder": 3,
+                "dashboardConfig": {
+                    "showOnlyActive":true,
+                    "drugConceptSet": ""
+                }
+            },
+
+            "disposition": {
+                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+                "showDetailsButton": true,
+                "type": "disposition",
+                "numberOfVisits": 1,
+                "displayOrder": 5
+            },
+            "vitals": {
+                "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
+                "type": "vitals",
+                "isObservation": true,
+                "displayOrder": 6,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Vitals"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "Vitals"
+                        ],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+                }
+            },
+            "historyAndExaminations": {
+                "translationKey": "CONSULTATION_PAGE_KEY",
+                "type": "vitals",
+                "isObservation": true,
+                "displayOrder": 7,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Consultation"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Consultation"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {}
+                }
+            },
+            "programs": {
+                "title":"Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 8
+            },
+            "labOrdersDisplayControl": {
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+                "type": "ordersControl",
+                "orderType": "Lab Order",
+                "showDetailsButton": true,
+                "displayOrder": 8,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "Lab Order Fulfillment Form"
+                    ]
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Lab Order Fulfillment Form"
+                    ],
+                    "showDetailsButton":true
+                }
+            }
+        }
+    },
+    "orderResults": {
+        "translationKey": "Lab Orders",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Lab Orders",
+            "logo": "../../bahmni_config/openmrs/images/pih-sl-logo.png"
+        },
+        "sections":{
+            "labResults": {
+                "translationKey": "Lab Orders",
+                "type": "ordersControl",
+                "orderType": "Lab Order",
+                "displayType": "Full-Page",
+                "displayOrder": 0,
+                "dashboardConfig": {
+                    "conceptNames": [
+                        "Lab Order Fulfillment Form"
+                    ],
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Lab Order Fulfillment Form"
+                    ],
+                    "numberOfVisits": 10,
+                    "showDetailsButton":true
+                }
+            }
+        }
+    },
+    "currentPrescriptions": {
+        "translationKey": "Prescriptions",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 1,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Prescriptions",
+            "logo": "../../bahmni_config/openmrs/images/pih-sl-logo.png"
+        },
+        "sections":{
+            "labResults": {
+                "translationKey": "Prescriptions",
+                "type": "drugOrderDetails",
+                "displayType": "Full-Page",
+                "displayOrder": 0,
+                "dashboardConfig": {
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showOnlyActive":true,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                }
+            }
+        }
+    }
+}

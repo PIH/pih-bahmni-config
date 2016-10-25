@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <include file="procedures/procedures.xml" relativeToChangelogFile="true"/>
+    <include file="core-users.xml" relativeToChangelogFile="true"/>
+
+    <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/locations.sql"/>
+    </changeSet>
+    <changeSet id="pih-identifiers" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/patient_identifiers.sql"/>
+    </changeSet>
+    <changeSet id="pih-visit-type" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/visits.sql"/>
+    </changeSet>
+    <changeSet id="pih-global-properties" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/global_properties.sql"/>
+    </changeSet>
+    <changeSet id="pih-person-attribute-types" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/person_attribute_types.sql"/>
+    </changeSet>
+    <changeSet id="pih-occupation-coded-questions" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/occupation_coded_questions.sql"/>
+    </changeSet>
+    <changeSet id="pih-civil-status-coded-questions" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/civil_status_coded_question.sql"/>
+    </changeSet>
+    <changeSet id="pih-religion-coded-question" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/religion_coded_question.sql"/>
+    </changeSet>
+    <changeSet id="pih-patient-category" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/patient_category.sql"/>
+    </changeSet>
+    <changeSet id="pih-reason-for-visit" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/reason_for_visit_concept_set.sql"/>
+    </changeSet>
+    <changeSet id="pih-Mental-Health-program" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/Mental_Health_program.sql"/>
+    </changeSet>
+    <changeSet id="pih-HIV-program" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/HIV_program.sql"/>
+    </changeSet>
+</databaseChangeLog>
