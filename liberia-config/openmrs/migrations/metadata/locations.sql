@@ -2,9 +2,9 @@
 
 -- Locations
 
-call ensure_location('CES Health Center', 'CES Health Center', '9fb2cd26-63a7-4345-9a43-f188033626eb');
+call ensure_location('Pleebo Health Center', 'Pleebo Health Center', '586357AF-895A-4953-ACBD-8036214D46D6');
 
 
 -- Login Locations
 
-call ensure_location_has_tag('CES Health Center', 'Login Location');
+call ensure_location_has_tag('Pleebo Health Center', 'Login Location');
