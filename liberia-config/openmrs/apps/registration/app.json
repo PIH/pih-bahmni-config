@@ -19,7 +19,7 @@
         "config" : {
             "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "PL",
-            "defaultVisitType": "OPD",
+            "defaultVisitType": "Clinical",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "showCasteSameAsLastNameCheckbox": false,
@@ -27,7 +27,7 @@
             "afterVisitSaveForwardUrl": "#/search",
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "freeTextAddressFields": ["address1", "address2"]
+                "freeTextAddressFields": ["address1"]
             },
 
             "fieldValidation" : {
