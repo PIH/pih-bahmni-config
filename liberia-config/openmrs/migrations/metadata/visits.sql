@@ -2,5 +2,5 @@
 
 
 -- OPD Visit Type
-call ensure_visit_type('General OPD', 'Visit for patients coming for OPD', '1C8B8D48-8001-4218-B96A-3C7EA38A63F7');
+call ensure_visit_type('Clinical Visit', 'Clinic or Hospital Visit', 'f01c54cb-2225-471a-9cd5-d348552c337c');
 
