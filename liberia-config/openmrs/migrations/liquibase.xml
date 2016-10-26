@@ -40,10 +40,5 @@
     <changeSet id="pih-reason-for-visit" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/reason_for_visit_concept_set.sql"/>
     </changeSet>
-    <changeSet id="pih-Mental-Health-program" author="PIH" runAlways="true" runOnChange="true">
-        <sqlFile path="metadata/Mental_Health_program.sql"/>
-    </changeSet>
-    <changeSet id="pih-HIV-program" author="PIH" runAlways="true" runOnChange="true">
-        <sqlFile path="metadata/HIV_program.sql"/>
-    </changeSet>
+
 </databaseChangeLog>
