@@ -18,7 +18,7 @@
         ],
         "config" : {
             "autoCompleteFields":["familyName"],
-            "defaultIdentifierPrefix": "CES",
+            "defaultIdentifierPrefix": "PL",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
@@ -34,11 +34,7 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
             },
             "patientSearch": {
-              "customAttributes": {
-                "label": "Expediente SSA",
-                "fields": ["Expediente_SSA"]
-             },
-            "searchByPatientIdentifier": true
+             "searchByPatientIdentifier": true
           }
         }
 }
