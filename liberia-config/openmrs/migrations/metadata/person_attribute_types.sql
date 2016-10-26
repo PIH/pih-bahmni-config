@@ -24,6 +24,9 @@ call ensure_person_attribute_type('contactAddress', 'Contact Address', 'java.lan
 call ensure_person_attribute_type('contactPhone', 'Contact Phone Number', 'java.lang.String', NULL, 1, 1,
     0, NULL, NULL, NULL, 5, '276f8057-55a4-4b1c-8915-69ad090fcffb');
 
+-- Place of Birth
+call ensure_person_attribute_type('birthPlace', 'Place of Birth', 'java.lang.String', NULL, 1, 1,0, NULL, NULL, NULL, 5, '0b192340-3eb5-4597-8cea-d33c182fc79c');
+
     -- retire givenNameLocal
 call ensure_person_attribute_type('givenNameLocal', 'First name in local language', 'java.lang.String', NULL, 0, 1,
     1, 1, now(), 'remove from registration screen', 5, '7e6db4ea-e42f-11e5-8c3e-08002715d519');
