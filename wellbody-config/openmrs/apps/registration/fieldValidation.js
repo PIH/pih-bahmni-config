@@ -3,7 +3,7 @@ customValidator = {
         method: function (name, value) {
             return value >= 0;
         },
-        errorMessage: "Age should be a possitive value"
+        errorMessage: "Age should be a positive value"
     },
     "Telephone Number": {
         method: function (name, value, personAttributeDetails) {
@@ -11,10 +11,7 @@ customValidator = {
         },
         errorMessage: "Telephone Number should have minimum 6 digits"
     },
-    "caste": {
-        method: function (name, value, personAttributeDetails) {
-            return value.match(/^\w+$/);
-        },
-        errorMessage: "Caste should contain only alphanumeric characters"
-    }
+     "First Name of Mother": {
+        required: true
+        }
 };
