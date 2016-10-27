@@ -11,10 +11,7 @@ customValidator = {
         },
         errorMessage: "Telephone Number should have minimum 6 digits"
     },
-    "caste": {
-        method: function (name, value, personAttributeDetails) {
-            return value.match(/^\w+$/);
-        },
-        errorMessage: "Caste should contain only alphanumeric characters"
-    }
+    "First Name of Mother": {
+        required: true
+        }
 };
