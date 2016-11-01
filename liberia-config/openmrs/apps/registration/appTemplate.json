@@ -13,7 +13,7 @@
             "defaultIdentifierPrefix":{
                 "name": "defaultIdentifierPrefix",
                 "description": "Default identifier prefix used in search, create patient. eg. WBA",
-                "defaultValue": "PL"
+                "defaultValue": "LIB"
             },
             "searchByIdForwardUrl":{
                 "name": "searchByIdForwardUrl",
