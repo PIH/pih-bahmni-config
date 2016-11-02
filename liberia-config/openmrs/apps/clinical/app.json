@@ -25,6 +25,9 @@
     "config": {
         "showSaveConfirmDialog": false,
         "diagnosisStatus": "Inactive",
+        "programDisplayControl": {
+            "showProgramStateInTimeline": true
+        },
         "program": {
             "patientInformation": {
                 "ageLimit": 100
