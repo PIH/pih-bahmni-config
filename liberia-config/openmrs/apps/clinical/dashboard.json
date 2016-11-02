@@ -42,26 +42,17 @@
                     "countryDistrict"
                 ]
             },
-            "historyAndExaminations": {
-                "translationKey": "HIV Intake",
-                "type": "vitals",
-                "isObservation": true,
+            "baseline": {
+                "type": "forms",
                 "displayOrder": 3,
                 "dashboardConfig": {
-                    "showDetailsButton": true,
-                    "conceptNames": [
-                        "HIV Treatment and Care Intake Template"
-                    ],
-                    "numberOfVisits": 2
+                    "title": null,
+                    "maximumNoOfVisits": 10
                 },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "HIV Treatment and Care Intake Template"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
+                "formGroup": [
+                    "HIV Treatment and Care Intake Template"
+                ],
+                "translationKey": "HIV Baseline"
             },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
@@ -72,6 +63,18 @@
                     "maximumNoOfVisits": 8,
                     "groupByVisits": true
                 }
+            },
+            "followup": {
+                "type": "forms",
+                "displayOrder": 5,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
+                },
+                "formGroup": [
+                    "HIV Treatment and Care Progress Template"
+                ],
+                "translationKey": "HIV Followup"
             },
             "vitals": {
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
