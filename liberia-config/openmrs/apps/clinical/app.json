@@ -25,10 +25,12 @@
     "config": {
         "showSaveConfirmDialog": false,
         "diagnosisStatus": "Inactive",
+        "showFormsDate" : true,
         "programDisplayControl": {
             "showProgramStateInTimeline": true
         },
         "program": {
+            "showDashBoardWithinDateRange": true,
             "patientInformation": {
                 "ageLimit": 100
             }
@@ -38,25 +40,18 @@
             "COMMENTS",
             "Patient file"
         ],
-        "otherInvestigationsMap": {
-            "Radiology": "Radiology Order",
-            "Endoscopy": "Endoscopy Order"
-        },
+
         "allowConsultationWhenNoOpenVisit": false,
         "defaultVisitType": "OPD",
         "visitTypeForRetrospectiveEntries": "OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {
-            "Chief Complaint Data": {
-                "autocomplete":true,
-                "codedConceptName":"Chief Complaint",
-                "nonCodedConceptName":"Non-Coded Chief Complaint",
-                "durationRequired": false,
-                "allowAddMore": true
+            "All Observation Templates": {
+                "showPanelView": true
             },
-            "Vitals": {
-                "alwaysShow": true
+            "HIV Treatment and Care Progress Template": {
+                "allowAddMore": true
             },
             "Posture": {
                 "buttonSelect": true
@@ -95,15 +90,6 @@
                 "allowAddMore": true
             },
             "Coded3": {
-                "multiSelect": true
-            },
-            "Image": {
-                "allowAddMore": true
-            },
-            "Gynaecology, Gravida": {
-                "stepper": true
-            },
-            "Accepted Family Planning methods": {
                 "multiSelect": true
             },
             "defaults": {
