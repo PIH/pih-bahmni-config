@@ -18,24 +18,6 @@
                     "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"]
                 }
             },
-            "diagnoses":{
-                "type": "diagnosis",
-                "displayOrder": 1,
-                "config": {
-                    "translationKey" : "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                    "showCertainty": false,
-                    "showOrder": false,
-                    "showDetailsButton": true
-                }
-            },
-            "disposition": {
-                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "type": "disposition",
-                "displayOrder": 2,
-                "config": {
-                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY"
-                }
-            },
             "Treatments": {
                 "type": "treatment",
                 "displayOrder": 3,
@@ -57,30 +39,9 @@
                 "config": {
                     "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
                     "conceptNames": [
-                        "Vitals"
+                        "Vitals","HIV Treatment and Care Intake Template", "HIV Treatment and Care Progress Template"
                     ],
                     "scope": "latest"
-                }
-            },
-            "labOrders":{
-                "type":"order",
-                "displayOrder": 5,
-                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "config":{
-                    "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                    "orderType": "Lab Order"
-                }
-            },
-            "historyAndExaminations":{
-                "type": "observation",
-                "displayOrder": 6,
-                "translationKey": "CONSULTATION_PAGE_KEY",
-                "config": {
-                    "conceptNames": [
-                        "Consultation"
-                    ],
-                    "scope": "latest",
-                    "numberOfVisits": "1"
                 }
             }
         }
