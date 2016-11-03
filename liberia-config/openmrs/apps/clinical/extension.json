@@ -37,7 +37,7 @@
     "order": 5,
     "requiredPrivilege": "app:clinical"
   },
-  "bahmni_clinical_consultation_observations_app_clinical_observationtab": {
+  "observationtab": {
     "id": "bahmni.clinical.consultation.observations",
     "extensionPointId": "org.bahmni.clinical.consultation.board",
     "type": "link",

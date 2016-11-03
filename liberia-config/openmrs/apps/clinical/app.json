@@ -51,6 +51,9 @@
             "All Observation Templates": {
                 "showPanelView": true
             },
+            "HIV Treatment and Care Intake Template": {
+                "allowAddMore": true
+            },
             "HIV Treatment and Care Progress Template": {
                 "allowAddMore": true
             },
