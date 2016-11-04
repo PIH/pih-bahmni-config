@@ -34,10 +34,10 @@
             },
             "vitals":{
                 "type": "observation",
-                "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                "translationKey" : "HIV Followup",
                 "displayOrder": 4,
                 "config": {
-                    "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                    "translationKey" : "HIV Followup",
                     "conceptNames": [
                         "HIV Treatment and Care Progress Template"
                     ],

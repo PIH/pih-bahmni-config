@@ -25,6 +25,7 @@
     ],
     "config": {
         "showSaveConfirmDialog": false,
+        "allowPatientSwitchOnConsultation": true,
         "diagnosisStatus": "Inactive",
         "programDisplayControl": {
             "showProgramStateInTimeline": true
@@ -54,9 +55,6 @@
                 "allowAddMore": true
             },
             "HIV Treatment and Care Progress Template": {
-                "allowAddMore": true
-            },
-            "Tuberculosis Followup Template": {
                 "allowAddMore": true
             },
             "Posture": {
