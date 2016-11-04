@@ -42,18 +42,6 @@
                     "countryDistrict"
                 ]
             },
-            "baseline": {
-                "type": "forms",
-                "displayOrder": 3,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": [
-                    "HIV Treatment and Care Intake Template"
-                ],
-                "translationKey": "HIV Baseline"
-            },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
@@ -63,18 +51,6 @@
                     "maximumNoOfVisits": 8,
                     "groupByVisits": true
                 }
-            },
-            "followup": {
-                "type": "forms",
-                "displayOrder": 5,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": [
-                    "HIV Treatment and Care Progress Template"
-                ],
-                "translationKey": "HIV Followup"
             },
             "vitals": {
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
@@ -104,6 +80,85 @@
                         "labConcepts": []
                     }
                 }
+            }
+        }
+    },
+    "hivtab": {
+        "translationKey": "HIV",
+        "displayByDefault": true,
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "navigationLinksControl": {
+                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+                "type": "navigationLinksControl",
+                "displayOrder": 0,
+                "customLinks": [
+                    {
+                        "translationKey": "HOME_DASHBOARD_KEY",
+                        "url": "../home/#/dashboard"
+                    },
+                    {
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
+                        "translationKey": "PATIENT_VISIT_PAGE_KEY"
+                    },
+                    {
+                        "translationKey": "CONSULTATION_PAGE_KEY",
+                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
+                    }
+                ]
+            },
+            "programs": {
+                "title":"Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 1
+            },
+            "patientInformation": {
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "type": "patientInformation",
+                "displayOrder": 2,
+                "ageLimit": 100,
+                "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"],
+                "addressFields": [
+                    "address1",
+                    "address2",
+                    "cityVillage",
+                    "countryDistrict"
+                ]
+            },
+            "baseline": {
+                "type": "forms",
+                "displayOrder": 3,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
+                },
+                "formGroup": [
+                    "HIV Treatment and Care Intake Template"
+                ],
+                "translationKey": "HIV Baseline"
+            },
+            "visits": {
+                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+                "type": "visits",
+                "displayOrder": 4,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10,
+                    "groupByVisits": true
+                }
+            },
+            "followup": {
+                "type": "forms",
+                "displayOrder": 5,
+                "dashboardConfig": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
+                },
+                "formGroup": [
+                    "HIV Treatment and Care Progress Template"
+                ],
+                "translationKey": "HIV Followup"
             }
         }
     }

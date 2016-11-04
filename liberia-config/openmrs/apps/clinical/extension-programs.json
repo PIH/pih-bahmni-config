@@ -30,10 +30,20 @@
         "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
         "type": "config",
         "extensionParams": {
-            "default": true,
             "conceptName": "HIV Treatment and Care Intake Template"
         },
         "order": 2,
+        "requiredPrivilege": "app:clinical"
+    },
+    "bahmniClinicalConceptSetGroupObservationsHivProgress": {
+        "id": "bahmni.clinical.conceptSetGroup.observations.hivprogress",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "HIV Treatment and Care Progress Template"
+        },
+        "order": 3,
         "requiredPrivilege": "app:clinical"
     },
     "bahmni_clinical_consultation_observations_app_clinical_observationtab": {

@@ -26,7 +26,6 @@
     "config": {
         "showSaveConfirmDialog": false,
         "diagnosisStatus": "Inactive",
-        "showFormsDate" : true,
         "programDisplayControl": {
             "showProgramStateInTimeline": true
         },
@@ -42,19 +41,22 @@
             "Patient file"
         ],
 
-        "defaultVisitType": "OPD",
+        "defaultVisitType": "Clinical",
         "showFormsDate" : true,
-        "visitTypeForRetrospectiveEntries": "OPD",
+        "visitTypeForRetrospectiveEntries": "Clinical",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {
             "All Observation Templates": {
                 "showPanelView": true
             },
-            "HIV Treatment and Care Intake Template": {
+            "HIV Treatment and Care x` Template": {
                 "allowAddMore": true
             },
             "HIV Treatment and Care Progress Template": {
+                "allowAddMore": true
+            },
+            "Tuberculosis Followup Template": {
                 "allowAddMore": true
             },
             "Posture": {

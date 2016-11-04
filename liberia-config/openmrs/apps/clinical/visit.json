@@ -39,7 +39,7 @@
                 "config": {
                     "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
                     "conceptNames": [
-                        "Vitals","HIV Treatment and Care Intake Template", "HIV Treatment and Care Progress Template"
+                        "HIV Treatment and Care Progress Template"
                     ],
                     "scope": "latest"
                 }
