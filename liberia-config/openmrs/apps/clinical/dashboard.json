@@ -148,18 +148,6 @@
                     "groupByVisits": true
                 }
             },
-            "followup": {
-                "type": "forms",
-                "displayOrder": 5,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": [
-                    "HIV Treatment and Care Progress Template"
-                ],
-                "translationKey": "HIV Followup"
-            },
             "Followup Visits": {
                 "displayType": "Full-Page",
                 "translationKey": "Followup Visits",
@@ -176,7 +164,11 @@
                     "conceptNames": [
                         "HIVTC, Chief Complaint",
                         "HIVTC, ART current status",
-                        "HIVTC, ART Treatment Adherence"
+                        "HIVTC, Name of Switched Regimem",
+                        "HIVTC, ART Treatment Adherence",
+                        "HIVTC, Opportunistic Infection Diagnosis",
+                        "HIVTC, TB Screened",
+                        "Next Appointment Date"
                     ]
                 }
             }
