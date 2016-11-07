@@ -168,6 +168,8 @@
                         "HIVTC, ART Treatment Adherence",
                         "HIVTC, Opportunistic Infection Diagnosis",
                         "HIVTC, TB Screened",
+                        "HIVTC, CD4 count",
+                        "HIVTC, Viral Load date",
                         "Next Appointment Date"
                     ]
                 }
