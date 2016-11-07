@@ -24,6 +24,21 @@
         "visitUuid"
     ],
     "config": {
+        "patientContext": {
+            "programAttributes": [
+                "Registration Number",
+                "Registration Facility"
+            ],
+            "personAttributes": [
+                "telephoneNumber",
+                "civilStatus",
+                "occupation"
+            ],
+            "preferredIdentifier": "Patient Identifier"
+        },
+        "networkConnectivity" : {
+            "networkStatusCheckInterval": 50000
+        },
         "showSaveConfirmDialog": false,
         "allowPatientSwitchOnConsultation": true,
         "diagnosisStatus": "Inactive",
@@ -44,7 +59,7 @@
 
         "defaultVisitType": "Clinical",
         "showFormsDate" : true,
-        "visitTypeForRetrospectiveEntries": "Clinical",
+        "visitTypeForRetrospectiveEntries": "HIV",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {

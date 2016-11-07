@@ -1,7 +1,6 @@
 {
     "general": {
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
-        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "navigationLinksControl": {
@@ -91,6 +90,7 @@
             "navigationLinksControl": {
                 "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type": "navigationLinksControl",
+                "displayType": "Full-Page",
                 "displayOrder": 0,
                 "customLinks": [
                     {
@@ -107,16 +107,10 @@
                     }
                 ]
             },
-            "programs": {
-                "title":"Programs",
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type": "programs",
-                "displayOrder": 1
-            },
             "patientInformation": {
                 "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type": "patientInformation",
-                "displayOrder": 2,
+                "displayOrder": 1,
                 "ageLimit": 100,
                 "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"],
                 "addressFields": [
@@ -126,27 +120,37 @@
                     "countryDistrict"
                 ]
             },
-            "baseline": {
-                "type": "forms",
-                "displayOrder": 3,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "formGroup": [
-                    "HIV Treatment and Care Intake Template"
-                ],
-                "translationKey": "HIV Baseline"
+            "programs": {
+                "title":"Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 2
             },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
-                "displayOrder": 4,
+                "displayOrder": 3,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10,
                     "groupByVisits": true
                 }
+            },
+            "baseline": {
+                "type": "monthlytreatment",
+                "isObservation": true,
+                "title": "HIV Intake",
+                "displayType": "Full-Page",
+                "displayOrder": 4,
+                "dashboardConfig": {
+                    "showGroupDateTime": false,
+                    "persistOrderOfConcepts": true,
+                    "conceptNames": [
+                        "HIVTC, Chief Complaint"
+                    ],
+                    "scope": "initial"
+                },
+                "translationKey": "HIV Baseline"
             },
             "Followup Visits": {
                 "displayType": "Full-Page",
