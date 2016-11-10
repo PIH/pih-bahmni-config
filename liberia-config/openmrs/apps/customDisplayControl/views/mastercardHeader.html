@@ -1,0 +1,33 @@
+<div>
+    <h2 class="section-title">{{config.title}}</h2>
+    <section class="dashboard-section">
+        <ul class="form-field">
+            <li ng-repeat="obsGroup in observations">
+                <span class="obsTableHeaderName"> {{obsGroup.conceptNameToDisplay }} </span>
+                <span class="obs-date"> {{obsGroup.value}} </span>
+            </li>
+        </ul>
+    </section>
+</div>
+<div class="block" ng-class="::{'hidden-print': noObsMessage}">
+    <div class="concept-set-container-view">
+        <section class="block hierarchy">
+            <ul class="form-field" ng-if="bahmniObservations.length > 0">
+                <li ng-repeat="obsGroup in ::bahmniObservations">
+                    <span class="tree-list-item row-click toggle-container" >
+                        <i class="fa fa-caret-right"></i>
+                        <i class="fa fa-caret-down"></i>
+                        <span class="obs-date">
+                            {{::obsGroup.observationDateTime | bahmniDateTime}}
+                        </span>
+                    </span>
+
+                    <ul class="print-observations hidden-print">
+                        <show-observation patient="::patient" observation="::observation" ng-repeat="observation in ::obsGroup.groupMembers" level="2"></show-observation>
+                    </ul>
+
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
