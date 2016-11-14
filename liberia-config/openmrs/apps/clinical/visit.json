@@ -32,16 +32,26 @@
                     "showProvider":false
                 }
             },
-            "vitals":{
+            "hivIntake":{
                 "type": "observation",
-                "translationKey" : "HIV Followup",
+                "translationKey" : "ART Mastercard",
                 "displayOrder": 4,
                 "config": {
-                    "translationKey" : "HIV Followup",
+                    "translationKey" : "ART Mastercard",
                     "conceptNames": [
-                        "HIV Treatment and Care Progress Template"
-                    ],
-                    "scope": "latest"
+                        "ART Mastercard"
+                    ]
+                }
+            },
+            "hivFollowup":{
+                "type": "observation",
+                "translationKey" : "ART Followup Visit",
+                "displayOrder": 5,
+                "config": {
+                    "translationKey" : "ART Followup Visit",
+                    "conceptNames": [
+                        "ART Followup Visit"
+                    ]
                 }
             }
         }

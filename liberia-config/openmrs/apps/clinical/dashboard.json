@@ -79,6 +79,32 @@
                         "labConcepts": []
                     }
                 }
+            },
+            "hivBaseline": {
+                "translationKey": "ART Mastercard",
+                "isObservation": true,
+                "displayOrder": 7,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "ART Mastercard"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "ART Mastercard"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "ART Mastercard"
+                        ]
+                    }
+                }
             }
         }
     },
@@ -136,44 +162,42 @@
                     "groupByVisits": true
                 }
             },
-            "baseline": {
-                "type": "monthlytreatment",
-                "isObservation": true,
-                "title": "HIV Intake",
+            "ART Mastercard Visit": {
                 "displayType": "Full-Page",
-                "displayOrder": 4,
+                "translationKey": "ART Mastercard",
+                "type": "obsToObsFlowSheet",
+                "headingConceptSource": "Abbreviation",
+                "dataConceptSource": "Abbreviation",
+                "displayOrder": 7,
                 "dashboardConfig": {
-                    "showGroupDateTime": false,
-                    "persistOrderOfConcepts": true,
+                    "templateName": "ART Mastercard",
+                    "groupByConcept": "ART Mastercard, Visit Date",
+                    "type": "DstExtension",
+                    "pivotOn": "row",
+                    "isEditable": "true",
                     "conceptNames": [
-                        "HIVTC, Chief Complaint"
-                    ],
-                    "scope": "initial"
-                },
-                "translationKey": "HIV Baseline"
+                        "Weight Data",
+                        "Height Data",
+                        "HIV C&T Summary Diagnostic"
+                    ]
+                }
             },
-            "Followup Visits": {
+            "ART Visits": {
                 "displayType": "Full-Page",
-                "translationKey": "Followup Visits",
+                "translationKey": "ART Visits",
                 "type": "obsToObsFlowSheet",
                 "headingConceptSource": "Abbreviation",
                 "dataConceptSource": "Abbreviation",
                 "displayOrder": 14,
                 "dashboardConfig": {
-                    "templateName": "HIV Treatment and Care Progress Template",
+                    "templateName": "ART Followup Visit",
                     "groupByConcept": "Followup, Visit Date",
                     "type": "DstExtension",
                     "pivotOn": "row",
                     "isEditable": "true",
                     "conceptNames": [
-                        "HIVTC, Chief Complaint",
-                        "HIVTC, ART current status",
-                        "HIVTC, Name of Switched Regimem",
-                        "HIVTC, ART Treatment Adherence",
-                        "HIVTC, Opportunistic Infection Diagnosis",
-                        "HIVTC, TB Screened",
-                        "HIVTC, CD4 count",
-                        "HIVTC, Viral Load date",
+                        "Weight Data",
+                        "Height Data",
                         "Next Appointment Date"
                     ]
                 }

@@ -66,10 +66,7 @@
             "All Observation Templates": {
                 "showPanelView": true
             },
-            "HIV Treatment and Care x` Template": {
-                "allowAddMore": true
-            },
-            "HIV Treatment and Care Progress Template": {
+            "ART Followup Visit": {
                 "allowAddMore": true
             },
             "Posture": {
