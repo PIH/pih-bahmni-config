@@ -176,9 +176,15 @@
                     "pivotOn": "row",
                     "isEditable": "true",
                     "conceptNames": [
+                        "Date Confirmed HIV+",
+                        "HIV Type",
                         "Weight Data",
                         "Height Data",
-                        "HIV C&T Summary Diagnostic"
+                        "HIVTC, HIV care WHO Staging",
+                        "HIVTC, ART start date",
+                        "HIVTC, ART Regimen",
+                        "HIVTC, Viral Load",
+                        "HIVTC, CD4 count"
                     ]
                 }
             },
