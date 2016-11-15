@@ -202,8 +202,12 @@
                     "pivotOn": "row",
                     "isEditable": "true",
                     "conceptNames": [
-                        "Weight Data",
+                        "Reason for Visit, Codes for Side Effects or Other problems",
+                        "Adherence",
                         "Height Data",
+                        "Weight Data",
+                        "HIVTC, CD4 count",
+                        "HIVTC, ART Regimen",
                         "Next Appointment Date"
                     ]
                 }
