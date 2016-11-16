@@ -59,7 +59,7 @@
 
         "defaultVisitType": "Clinical",
         "showFormsDate" : true,
-        "visitTypeForRetrospectiveEntries": "HIV",
+        "visitTypeForRetrospectiveEntries": "Clinical",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {
