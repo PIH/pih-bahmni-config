@@ -1,6 +1,7 @@
 {
     "general": {
         "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+        "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "navigationLinksControl": {
@@ -79,32 +80,6 @@
                         "labConcepts": []
                     }
                 }
-            },
-            "hivBaseline": {
-                "translationKey": "ART Mastercard",
-                "isObservation": true,
-                "displayOrder": 7,
-                "dashboardConfig": {
-                    "showDetailsButton": true,
-                    "conceptNames": [
-                        "ART Mastercard"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "ART Mastercard"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "10",
-                        "groupBy": "encounters",
-                        "obsConcepts": [
-                            "ART Mastercard"
-                        ]
-                    }
-                }
             }
         }
     },
@@ -113,55 +88,6 @@
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
-            "navigationLinksControl": {
-                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "type": "navigationLinksControl",
-                "displayType": "Full-Page",
-                "displayOrder": 0,
-                "customLinks": [
-                    {
-                        "translationKey": "HOME_DASHBOARD_KEY",
-                        "url": "../home/#/dashboard"
-                    },
-                    {
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/?encounterUuid=active",
-                        "translationKey": "PATIENT_VISIT_PAGE_KEY"
-                    },
-                    {
-                        "translationKey": "CONSULTATION_PAGE_KEY",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
-                    }
-                ]
-            },
-            "patientInformation": {
-                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "type": "patientInformation",
-                "displayOrder": 1,
-                "ageLimit": 100,
-                "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"],
-                "addressFields": [
-                    "address1",
-                    "address2",
-                    "cityVillage",
-                    "countryDistrict"
-                ]
-            },
-            "programs": {
-                "title":"Programs",
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type": "programs",
-                "displayOrder": 2
-            },
-            "visits": {
-                "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
-                "type": "visits",
-                "displayOrder": 3,
-                "dashboardConfig": {
-                    "title": null,
-                    "maximumNoOfVisits": 10,
-                    "groupByVisits": true
-                }
-            },
             "ART Mastercard Visit": {
                 "displayType": "Full-Page",
                 "translationKey": "ART Mastercard",
@@ -198,6 +124,7 @@
                 "dashboardConfig": {
                     "templateName": "ART Followup Visit",
                     "groupByConcept": "Followup, Visit Date",
+                    "orderByConcept": "Followup, Visit Date",
                     "type": "DstExtension",
                     "pivotOn": "row",
                     "isEditable": "true",
