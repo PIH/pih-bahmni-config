@@ -80,7 +80,20 @@
                         "labConcepts": []
                     }
                 }
+            },
+            "weight": {
+                "type": "observationGraph",
+                "title": "Weight",
+                "config": {
+                    "yAxisConcepts": [
+                        "Weight Data"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 7
             }
+
         }
     },
     "hivtab": {
@@ -117,12 +130,15 @@
             "ART Visits": {
                 "displayType": "Full-Page",
                 "translationKey": "ART Visits",
-                "type": "obsToObsFlowSheet",
-                "headingConceptSource": "Abbreviation",
-                "dataConceptSource": "Abbreviation",
-                "displayOrder": 14,
-                "dashboardConfig": {
+                "type": "custom",
+                "displayOrder": 16,
+                "config": {
+                    "title": "ART Flow Sheet",
+                    "template": "<art-visit-flow-sheet></art-visit-flow-sheet>",
+                    "translationKey": "ART Visits",
                     "templateName": "ART Followup Visit",
+                    "headingConceptSource": "Abbreviation",
+                    "dataConceptSource": "Abbreviation",
                     "groupByConcept": "Followup, Visit Date",
                     "orderByConcept": "Followup, Visit Date",
                     "type": "DstExtension",
