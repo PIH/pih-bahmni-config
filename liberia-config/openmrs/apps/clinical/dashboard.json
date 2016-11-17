@@ -18,14 +18,16 @@
                         "translationKey": "PATIENT_VISIT_PAGE_KEY"
                     },
                     {
-                        "translationKey": "DASHBOARD_TAB_ORDERS_KEY",
-                        "url": "../orders/#/patient/{{patientUuid}}/fulfillment/Lab%20Order"
-                    },
-                    {
                         "translationKey": "CONSULTATION_PAGE_KEY",
                         "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ]
+            },
+            "programs": {
+                "title":"Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 1
             },
             "patientInformation": {
                 "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
@@ -40,14 +42,6 @@
                     "countryDistrict"
                 ]
             },
-            "diagnosis": {
-                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "type": "diagnosis",
-                "showCertainty": true,
-                "showOrder": true,
-                "showDetailsButton": true,
-                "displayOrder": 1
-            },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "type": "visits",
@@ -57,24 +51,6 @@
                     "maximumNoOfVisits": 8,
                     "groupByVisits": true
                 }
-            },
-            "medicationDetails": {
-                "translationKey": "DASHBOARD_TITLE_ACTIVE_MEDICATIONS",
-                "type": "drugOrderDetails",
-                "showDetailsButton" : true,
-                "displayOrder": 3,
-                "dashboardConfig": {
-                    "showOnlyActive":true,
-                    "drugConceptSet": ""
-                }
-            },
-
-            "disposition": {
-                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "showDetailsButton": true,
-                "type": "disposition",
-                "numberOfVisits": 1,
-                "displayOrder": 5
             },
             "vitals": {
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
@@ -105,111 +81,78 @@
                     }
                 }
             },
-            "historyAndExaminations": {
-                "translationKey": "CONSULTATION_PAGE_KEY",
-                "type": "vitals",
-                "isObservation": true,
-                "displayOrder": 7,
-                "dashboardConfig": {
-                    "showDetailsButton": true,
-                    "conceptNames": [
-                        "Consultation"
+            "weight": {
+                "type": "observationGraph",
+                "title": "Weight",
+                "config": {
+                    "yAxisConcepts": [
+                        "Weight Data"
                     ],
-                    "numberOfVisits": 2
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
                 },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Consultation"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                }
-            },
-            "programs": {
-                "title":"Programs",
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type": "programs",
-                "displayOrder": 8
-            },
-            "labOrdersDisplayControl": {
-                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type": "ordersControl",
-                "orderType": "Lab Order",
-                "showDetailsButton": true,
-                "displayOrder": 8,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Lab Order Fulfillment Form"
-                    ]
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Lab Order Fulfillment Form"
-                    ],
-                    "showDetailsButton":true
-                }
+                "displayOrder": 7
             }
+
         }
     },
-    "orderResults": {
-        "translationKey": "Lab Orders",
+    "hivtab": {
+        "translationKey": "HIV",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
-        "printing": {
-            "title": "Bahmni",
-            "header": "Lab Orders",
-            "logo": "../../bahmni_config/openmrs/images/pih-sl-logo.png"
-        },
-        "sections":{
-            "labResults": {
-                "translationKey": "Lab Orders",
-                "type": "ordersControl",
-                "orderType": "Lab Order",
+        "sections": {
+            "ART Mastercard Visit": {
                 "displayType": "Full-Page",
-                "displayOrder": 0,
+                "translationKey": "ART Mastercard",
+                "type": "obsToObsFlowSheet",
+                "headingConceptSource": "Abbreviation",
+                "dataConceptSource": "Abbreviation",
+                "displayOrder": 7,
                 "dashboardConfig": {
+                    "templateName": "ART Mastercard",
+                    "groupByConcept": "ART Mastercard, Visit Date",
+                    "type": "DstExtension",
+                    "pivotOn": "row",
+                    "isEditable": "true",
                     "conceptNames": [
-                        "Lab Order Fulfillment Form"
-                    ],
-                    "title": null,
-                    "numberOfVisits": 1,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Lab Order Fulfillment Form"
-                    ],
-                    "numberOfVisits": 10,
-                    "showDetailsButton":true
+                        "Date Confirmed HIV+",
+                        "HIV Type",
+                        "Weight Data",
+                        "Height Data",
+                        "HIVTC, HIV care WHO Staging",
+                        "HIVTC, ART start date",
+                        "HIVTC, ART Regimen",
+                        "HIVTC, Viral Load",
+                        "HIVTC, CD4 count"
+                    ]
                 }
-            }
-        }
-    },
-    "currentPrescriptions": {
-        "translationKey": "Prescriptions",
-        "displayByDefault": true,
-        "maxRecentlyViewedPatients": 1,
-        "printing": {
-            "title": "Bahmni",
-            "header": "Prescriptions",
-            "logo": "../../bahmni_config/openmrs/images/pih-sl-logo.png"
-        },
-        "sections":{
-            "labResults": {
-                "translationKey": "Prescriptions",
-                "type": "drugOrderDetails",
+            },
+            "ART Visits": {
                 "displayType": "Full-Page",
-                "displayOrder": 0,
-                "dashboardConfig": {
-                    "title": null,
-                    "numberOfVisits": 1,
-                    "showOnlyActive":true,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false
+                "translationKey": "ART Visits",
+                "type": "custom",
+                "displayOrder": 16,
+                "config": {
+                    "title": "ART Flow Sheet",
+                    "template": "<art-visit-flow-sheet></art-visit-flow-sheet>",
+                    "translationKey": "ART Visits",
+                    "templateName": "ART Followup Visit",
+                    "headingConceptSource": "Abbreviation",
+                    "dataConceptSource": "Abbreviation",
+                    "groupByConcept": "Followup, Visit Date",
+                    "orderByConcept": "Followup, Visit Date",
+                    "type": "DstExtension",
+                    "pivotOn": "row",
+                    "isEditable": "true",
+                    "conceptNames": [
+                        "Reason for Visit, Codes for Side Effects or Other problems",
+                        "Adherence",
+                        "Height Data",
+                        "Weight Data",
+                        "HIVTC, CD4 count",
+                        "HIVTC, ART Regimen",
+                        "Next Appointment Date"
+                    ]
                 }
             }
         }

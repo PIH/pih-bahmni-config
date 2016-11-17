@@ -1,5 +1,6 @@
 {
     "id": "bahmni.clinical",
+    "shouldOverRideConfig": true,
     "extensionPoints": [
         {
             "id": "org.bahmni.clinical.consultation.board",
@@ -23,9 +24,29 @@
         "visitUuid"
     ],
     "config": {
+        "patientContext": {
+            "programAttributes": [
+                "Registration Number",
+                "Registration Facility"
+            ],
+            "personAttributes": [
+                "telephoneNumber",
+                "civilStatus",
+                "occupation"
+            ],
+            "preferredIdentifier": "Patient Identifier"
+        },
+        "networkConnectivity" : {
+            "networkStatusCheckInterval": 50000
+        },
         "showSaveConfirmDialog": false,
+        "allowPatientSwitchOnConsultation": true,
         "diagnosisStatus": "Inactive",
+        "programDisplayControl": {
+            "showProgramStateInTimeline": true
+        },
         "program": {
+            "showDashBoardWithinDateRange": true,
             "patientInformation": {
                 "ageLimit": 100
             }
@@ -35,25 +56,18 @@
             "COMMENTS",
             "Patient file"
         ],
-        "otherInvestigationsMap": {
-            "Radiology": "Radiology Order",
-            "Endoscopy": "Endoscopy Order"
-        },
-        "allowConsultationWhenNoOpenVisit": false,
-        "defaultVisitType": "OPD",
-        "visitTypeForRetrospectiveEntries": "OPD",
+
+        "defaultVisitType": "Clinical",
+        "showFormsDate" : true,
+        "visitTypeForRetrospectiveEntries": "Clinical",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {
-            "Chief Complaint Data": {
-                "autocomplete":true,
-                "codedConceptName":"Chief Complaint",
-                "nonCodedConceptName":"Non-Coded Chief Complaint",
-                "durationRequired": false,
-                "allowAddMore": true
+            "All Observation Templates": {
+                "showPanelView": true
             },
-            "Vitals": {
-                "alwaysShow": true
+            "ART Followup Visit": {
+                "allowAddMore": true
             },
             "Posture": {
                 "buttonSelect": true
@@ -93,25 +107,6 @@
             },
             "Coded3": {
                 "multiSelect": true
-            },
-            "Image": {
-                "allowAddMore": true
-            },
-            "Gynaecology, Gravida": {
-                "stepper": true
-            },
-            "Accepted Family Planning methods": {
-                "multiSelect": true
-            },
-            "defaults": {
-                "Number of living children": 1,
-                "Accepted Family Planning methods": [
-                    "Condoms",
-                    "Pills"
-                ],
-                "Pain management given": true,
-                "Safe Abortion, Remarks": "Remarks",
-                "Malaria, Death Date": "2015-12-01"
             }
         },
         "visitPage": {

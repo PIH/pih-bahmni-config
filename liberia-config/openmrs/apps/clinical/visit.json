@@ -18,24 +18,6 @@
                     "patientAttributes": ["Survivor", "Survivor ID", "HIV ID"]
                 }
             },
-            "diagnoses":{
-                "type": "diagnosis",
-                "displayOrder": 1,
-                "config": {
-                    "translationKey" : "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                    "showCertainty": false,
-                    "showOrder": false,
-                    "showDetailsButton": true
-                }
-            },
-            "disposition": {
-                "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "type": "disposition",
-                "displayOrder": 2,
-                "config": {
-                    "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY"
-                }
-            },
             "Treatments": {
                 "type": "treatment",
                 "displayOrder": 3,
@@ -50,37 +32,26 @@
                     "showProvider":false
                 }
             },
-            "vitals":{
+            "hivIntake":{
                 "type": "observation",
-                "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                "translationKey" : "ART Mastercard",
                 "displayOrder": 4,
                 "config": {
-                    "translationKey" : "DASHBOARD_TITLE_VITALS_KEY",
+                    "translationKey" : "ART Mastercard",
                     "conceptNames": [
-                        "Vitals"
-                    ],
-                    "scope": "latest"
+                        "ART Mastercard"
+                    ]
                 }
             },
-            "labOrders":{
-                "type":"order",
-                "displayOrder": 5,
-                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "config":{
-                    "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                    "orderType": "Lab Order"
-                }
-            },
-            "historyAndExaminations":{
+            "hivFollowup":{
                 "type": "observation",
-                "displayOrder": 6,
-                "translationKey": "CONSULTATION_PAGE_KEY",
+                "translationKey" : "ART Followup Visit",
+                "displayOrder": 5,
                 "config": {
+                    "translationKey" : "ART Followup Visit",
                     "conceptNames": [
-                        "Consultation"
-                    ],
-                    "scope": "latest",
-                    "numberOfVisits": "1"
+                        "ART Followup Visit"
+                    ]
                 }
             }
         }
