@@ -69,6 +69,9 @@
             "ART Followup Visit": {
                 "allowAddMore": true
             },
+            "Vitals": {
+                "allowAddMore": true
+            },
             "Posture": {
                 "buttonSelect": true
             },
@@ -78,18 +81,6 @@
             "Medical history question" : {
                 "multiSelect": true
             },
-            "P/A Presenting Part": {
-                "multiSelect": true
-            },
-            "FHS": {
-                "buttonSelect": true
-            },
-            "P/S (Per Speculum) - Cervix": {
-                "grid": true
-            },
-            "Anaemia, Stopped Since When": {
-                "conciseText": true
-            },
             "Notes": {
                 "conciseText": true
             },
@@ -98,15 +89,6 @@
             },
             "Tuberculosis Intake Template": {
                 "computeDrugs": true
-            },
-            "Set1": {
-                "allowAddMore": true
-            },
-            "Set2": {
-                "allowAddMore": true
-            },
-            "Coded3": {
-                "multiSelect": true
             }
         },
         "visitPage": {
