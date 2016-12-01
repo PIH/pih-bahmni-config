@@ -42,4 +42,6 @@
         <sqlFile path="metadata/vitals.sql"/>
     </changeSet>
 
+    <include file="expire-visits.xml" />
+
 </databaseChangeLog>
