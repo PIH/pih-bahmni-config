@@ -1,0 +1,875 @@
+{
+  "shouldOverRideConfig": true,
+  "general": {
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 1,
+    "printing": {
+      "title": "EndTB General Patient Dashboard",
+      "header": "Treatment Dashboard",
+      "logo": "../images/bahmniLogo.png",
+      "showNameAndImage": true
+    },
+    "sections": {
+      "tbTreatmentsDetails": {
+        "translationKey": "DASHBOARD_TITLE_TB_TREATMENTS_DETAILS",
+        "type": "drugOrderDetails",
+        "showDetailsButton": true,
+        "displayOrder": 1,
+        "dashboardConfig": {
+          "showOnlyActive": true,
+          "drugConceptSet": "All TB Drugs"
+        }
+      },
+      "labsAndTestResults": {
+        "type": "forms",
+        "displayOrder": 2,
+        "dashboardConfig": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "formGroup": [
+          "Lab Results Hemotology Template",
+          "Lab Results Biochemistry Template",
+          "Lab Results Serology Template",
+          "Lab Results Pregnancy Template",
+          "Lab Results Other Tests Template",
+          "Xray Template",
+          "Audiometry Template",
+          "Electrocardiogram Template",
+          "Performance Status Template"
+        ],
+        "translationKey": "DASHBOARD_TITLE_LAB_TESTS_FORMS"
+      },
+      "nontbTreatmentsDetails": {
+        "translationKey": "DASHBOARD_TITLE_NONTB_TREATMENTS_DETAILS",
+        "type": "drugOrderDetails",
+        "showDetailsButton": true,
+        "displayOrder": 3,
+        "dashboardConfig": {
+          "showOnlyActive": true,
+          "drugConceptSet": "All Other Drugs"
+        }
+      },
+      "bacteriologyResults": {
+        "translationKey": "DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
+        "type": "bacteriologyResultsControl",
+        "orderType": "",
+        "displayOrder": 4,
+        "dashboardConfig": {
+          "conceptNames": [
+            "BACTERIOLOGY CONCEPT SET"
+          ]
+        }
+      },
+      "baseline": {
+        "type": "forms",
+        "displayOrder": 5,
+        "dashboardConfig": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "formGroup": [
+          "Baseline Template",
+          "Treatment Initiation Template"
+        ],
+        "translationKey": "DASHBOARD_TITLE_BASELINE_FORMS"
+      },
+      "adverseEventsForms": {
+        "type": "forms",
+        "displayOrder": 6,
+        "dashboardConfig": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "formGroup": [
+          "Adverse Events Template",
+          "Serious Adverse Events Template",
+          "Pregnancy Report Form Template"
+        ],
+        "translationKey": "DASHBOARD_TITLE_ADVERSE_EVENTS_FORMS"
+      },
+      "followup": {
+        "type": "forms",
+        "displayOrder": 7,
+        "dashboardConfig": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "formGroup": [
+          "Followup Template",
+          "Monthly Treatment Completeness Template"
+        ],
+        "translationKey": "DASHBOARD_TITLE_FOLLOWUP_FORMS"
+      },
+      "adverseEvents": {
+        "translationKey": "DASHBOARD_TITLE_ADVERSE_EVENTS_SUMMARY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 8,
+        "displayType": "Full-Page",
+        "dashboardConfig": {
+          "isEditable": true,
+          "groupByConcept": "AE Form, AE term comprehensive list",
+          "templateName": "Adverse Events Template",
+          "conceptNames": [
+            "AE Form, Other AE term",
+	    "AE Form, AE ID number",
+            "AE Form, SAE Case Number",
+            "AE Form, Date of AE onset",
+            "AE Form, AE review date",
+            "AE Form, Date of AE Outcome",
+            "AE Form, AE outcome"
+          ]
+        }
+      },
+      "seriousAdverseEvents": {
+        "translationKey": "DASHBOARD_TITLE_SERIOUS_ADVERSE_EVENTS_SUMMARY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 9,
+        "displayType": "Full-Page",
+        "dashboardConfig": {
+          "isEditable": true,
+          "groupByConcept": "SAE Form, SAE term comprehensive AE list",
+          "templateName": "Serious Adverse Events Template",
+          "conceptNames": [
+            "SAE Form, Other SAE term",
+            "SAE Form, SAE ID number",
+            "SAE Form, AE ID if previously reported as AE",
+            "SAE Form, Event onset date",
+            "SAE Form, Date event became serious",
+            "SAE Form, Event end date",
+            "SAE Form, SAE outcome"
+          ]
+        }
+      },
+      "hospitalization": {
+        "type": "forms",
+        "displayOrder": 10,
+        "dashboardConfig": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "formGroup": [
+          "Hospital Admission Notification Template",
+          "Hospital Discharge Summary Template"
+        ],
+        "translationKey": "DASHBOARD_TITLE_HOSPITALIZATION_FORMS"
+      },
+      "outcome": {
+        "type": "forms",
+        "displayOrder": 11,
+        "dashboardConfig": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "formGroup": [
+          "Outcome End of Treatment Template",
+          "6 month Post Treatment Outcome Template"
+        ],
+        "translationKey": "DASHBOARD_TITLE_OUTCOME_FORMS"
+      }
+    },
+    "translationKey": "DASHBOARD_TAB_GENERAL_KEY"
+  },
+  "summary": {
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 1,
+    "printing": {
+      "title": "EndTB Patient Dashboard",
+      "header": "Patient Summary",
+      "logo": "../images/bahmniLogo.png",
+      "showNameAndImage": true
+    },
+    "sections": {
+      "treatmentInfo": {
+        "type": "monthlytreatment",
+        "isObservation": true,
+        "displayType": "Full-Page",
+        "dashboardConfig": {
+          "showGroupDateTime": false,
+          "conceptNames": [
+            "TUBERCULOSIS DRUG TREATMENT START DATE",
+            "Current month of treatment",
+            "Treatment Duration",
+            "Tuberculosis treatment end date",
+	    "TI, What is the situation of the patient?",
+            "TI, Indication for new TB drugs",
+	    "EOT, Outcome",
+            "6m PTO, 6 month post treatment outcome"
+          ]
+        },
+        "displayOrder": 1,
+        "translationKey": "SUMMARY_TITLE_TREATMENT_INFORMATION"
+      },
+      "casedefinition": {
+        "type": "casedefinition",
+        "isObservation": true,
+        "displayType": "Full-Page",
+        "dashboardConfig": {
+          "showGroupDateTime": false,
+          "conceptNames": [
+            "Baseline, WHO registration group",
+            "Baseline, Disease site",
+            "Baseline, Drug resistance",
+            "Baseline, Subclassification for confimed drug resistant cases"
+          ]
+        },
+        "displayOrder": 2,
+        "translationKey": "SUMMARY_TITLE_CASE_DEFINITION"
+      },
+      "serologystatus": {
+        "type": "serologystatus",
+        "isObservation": true,
+        "displayType": "Full-Page",
+        "dashboardConfig": {
+          "showGroupDateTime": false,
+          "conceptNames": [
+            "Baseline, HIV serostatus result",
+            "Date of HIV diagnosis",
+            "Baseline, Hepatitis B",
+            "Baseline, Hepatitis C",
+            "Lab, HIV test result",
+            "Lab, Hepatitis B antigen test result",
+            "Lab, Hepatitis C antibody test result"
+          ],
+          "scope": "latest"
+        },
+        "displayOrder": 3,
+        "translationKey": "SUMMARY_TITLE_SEROLOGY_STATUS"
+      },
+      "coMorbidities": {
+        "type": "custom",
+        "displayOrder": 4,
+        "displayType": "Full-Page",
+        "config": {
+          "title": "Co-morbidities",
+          "template": "<co-morbidities></co-morbidities>"
+        }
+      },
+      "pasttbhistory": {
+        "type": "pasttbhistory",
+        "isObservation": true,
+        "displayType": "Full-Page",
+        "dashboardConfig": {
+          "showGroupDateTime": false,
+          "conceptNames": [
+            "Baseline, If Yes, What was the year of the patients start of first TB treatment Details",
+            "Baseline, Treatment for drug-susceptible TB",
+            "Baseline, How many drug-susceptible TB treatments",
+            "Baseline, Treatment for drug-resistant TB",
+            "Baseline, How many drug-resistant TB treatments",
+            "Baseline, List of drugs taken for more than a month",
+            "Baseline, Other drug taken for more than a month"
+          ]
+        },
+        "displayOrder": 6,
+        "translationKey": "SUMMARY_TITLE_PAST_TB_TREATMENT_INFO"
+      },
+      "previousTBTreatmentRegimen": {
+        "translationKey": "SUMMARY_TITLE_PREVIOUS_TB_TREATMENT_TABLE",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "Full-Page",
+        "displayOrder": 7,
+        "dashboardConfig": {
+          "groupByConcept": "Baseline, Start date of past TB treatment",
+          "templateName": "Baseline, Past TB treatment table",
+          "conceptNames": [
+            "Baseline, End date of past TB treatment",
+            "Baseline, Past TB treatment drug regimen",
+            "Baseline, Type of past TB treatment",
+            "Baseline, Past TB treatment regimen type",
+            "Baseline, Past TB treatment outcome"
+          ]
+        }
+      },
+      "dstResults": {
+        "translationKey": "SUMMARY_TITLE_DST_RESULTS",
+        "type": "obsToObsFlowSheet",
+        "displayType": "Full-Page",
+        "displayOrder": 8,
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "dashboardConfig": {
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "conceptNames": [
+            "Bacteriology, Isoniazid 0.2 µg/ml result",
+            "Bacteriology, Isoniazid 1 µg/ml result",
+            "Bacteriology, Rifampicin result",
+            "Bacteriology, Ethambutol result",
+            "Bacteriology, Streptomycin result",
+            "Bacteriology, Pyrazinamide result",
+            "Bacteriology, Ofloxacin result",
+            "Bacteriology, Levofloxacin result",
+            "Bacteriology, Moxifloxacin 0.5 µg/ml results",
+            "Bacteriology, Moxifloxacin 2 µg/ml results",
+            "Bacteriology, Amikacin result",
+            "Bacteriology, Kanamycin result",
+            "Bacteriology, Capreomycin result",
+            "Bacteriology, Ethionamide result",
+            "Bacteriology, Cycloserine result",
+            "Bacteriology, PAS result",
+            "Bacteriology, Bedaquiline result",
+            "Bacteriology, Delamanid result",
+            "Bacteriology, Linezolid result",
+            "Bacteriology, Clofazamine result"
+          ]
+        }
+      },
+      "Xpertresults": {
+        "translationKey": "SUMMARY_TITLE_XPERT_RESULTS",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 9,
+        "dashboardConfig": {
+          "groupByConcept": "Specimen Collection Date",
+          "type": "XpertExtension",
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "conceptNames": [
+            "Bacteriology, Xpert MTB result",
+            "Bacteriology, RIF resistance result type"
+          ]
+        }
+      },
+      "HAINresults": {
+        "translationKey": "SUMMARY_TITLE_HAIN_RESULTS",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 10,
+        "dashboardConfig": {
+          "groupByConcept": "Specimen Collection Date",
+          "type": "HAINExtension",
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "conceptNames": [
+            "Bacteriology, HAIN MTBDRplus test result",
+            "Bacteriology, HAIN MTBDRsl test result",
+            "Bacteriology, Isoniazid",
+            "Bacteriology, Rifampicin",
+            "Bacteriology, Fluoroquinolone",
+            "Bacteriology, MTBDRsl injectable"            
+          ]
+        }
+      },   
+      "dstWithMIC": {
+        "translationKey": "SUMMARY_TITLE_DST_WITH_MIC",
+        "type": "obsToObsFlowSheet",
+        "displayType": "LAYOUT_75_25",
+        "displayOrder": 11,
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "dashboardConfig": {
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "conceptNames": [
+            "Bacteriology, DST with MIC drug name",
+            "Bacteriology, MIC technique/medium",
+            "Bacteriology, Minimum inhibitory concentration",
+            "Bacteriology, MIC interpretation"
+          ]
+        }
+      },
+      "dstOtherResults": {
+        "translationKey": "SUMMARY_TITLE_DST_OTHER_RESULTS",
+        "type": "obsToObsFlowSheet",
+        "displayType": "LAYOUT_25_75",
+        "displayOrder": 12,
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "dashboardConfig": {
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "conceptNames": [
+            "Bacteriology, Other drug name",
+            "Bacteriology, Other drug result"
+          ]
+        }
+      },
+      "Drug-O-Gram": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_DRUG_REGIMEN",
+        "type": "chronicTreatmentChart",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "dashboardConfig": {
+          "drugs": [
+            "ISONIAZID",
+            "RIFAMPICIN",
+            "ETHAMBUTOL",
+            "PYRAZINAMIDE",
+            "STREPTOMYCIN",
+            "AMIKACIN",
+            "Kanamycin",
+            "CAPREOMYCIN",
+            "LEVOFLOXACIN",
+            "MOXIFLOXACIN",
+            "PROTHIONAMIDE",
+            "ETHIONAMIDE",
+            "CYCLOSERINE",
+            "TERIZIDONE",
+            "P-AMINOSALICYLIC ACID",
+            "P-Aminosalicylic Acid Monosodium Salt",
+            "Bedaquiline",
+            "DELAMANID",
+            "LINEZOLID",
+            "CLOFAZIMINE",
+            "CILASTATIN / IMIPENEM",
+            "AMOXICILLIN AND CLAVULANIC ACID",
+            "Meropenem",
+            "Clarithromycin"
+          ]
+        },
+        "displayOrder": 13
+      },
+      "BacteriologyResults": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_CULTURE_SMEAR_RESULT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 14,
+        "dashboardConfig": {
+          "templateName": "BACTERIOLOGY CONCEPT SET",
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "conceptNames": [
+            "Bacteriology, Smear result",
+            "Bacteriology, Culture results",
+            "Bacteriology, Culture Colonies"
+          ]
+        }
+      },
+      "txCompletenessRate": {
+        "translationKey": "SUMMARY_TITLE_TREATMENT_COMPLETENESS_RATE",
+        "type": "obsToObsFlowSheet",
+        "displayType": "Full-Page",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 15,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Monthly Treatment Completeness Template",
+          "groupByConcept": "MTC, Month and year of treatment period",
+          "conceptNames": [
+            "MTC, Completeness rate",
+            "MTC, Adherence rate",
+            "MTC, Overall DOT Rate"
+          ]
+        }
+      },
+      "weightBMI": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_WEIGHT_VS_BMI",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 16,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Followup Template",
+          "groupByConcept": "Followup, Visit Date",
+          "type": "BMIExtension",
+          "conceptNames": [
+            "Weight (kg)"
+          ]
+        }
+      },
+      "LabHaemotology": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_LAB_HEMATOLOGY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 17,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Lab Results Hemotology Template",
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "conceptNames": [
+            "Lab, Hemoglobin g/dl Data",
+            "Lab, Hematocrit Data",
+            "Lab, Platelet count Data",
+            "Lab, RED BLOOD CELLS Data",
+            "Lab, WHITE BLOOD CELLS Data",
+            "Lab, Absolute neutrophil count other test result Data",
+            "Lab, Neutrophils test result Data"
+          ]
+        }
+      },
+      "LabBiochemistry": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_LAB_BIOCHEMISTRY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 18,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Lab Results Biochemistry Template",
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "conceptNames": [
+            "Lab, SERUM POTASSIUM Data",
+            "Lab, Magnesium test result Data",
+            "Lab, Ionized Calcium other Data",
+            "Lab, BLOOD UREA NITROGEN Data",
+            "Lab, Creatinine other Data",
+            "Lab, Glucose other Data",
+            "Lab, Fasting blood glucose measurement (mg/dL) Data",
+            "Lab, glycosylated hemoglobin A measurement Data",
+            "Lab, Thyroid stimulating hormone test Data",
+            "Lab, Lipase test result Data",
+            "Lab, SERUM GLUTAMIC-OXALOACETIC TRANSAMINASE Data",
+            "Lab, SERUM GLUTAMIC-PYRUVIC TRANSAMINASE Data",
+            "Lab, TOTAL BILIRUBIN Data",
+            "Lab, SERUM ALBUMIN Data"
+          ]
+        }
+      },
+      "LabResultsSerologyTemplate": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_LAB_SEROLOGY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 19,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Lab Results Serology Template",
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "conceptNames": [
+            "Lab, Hepatitis B antigen test result",
+            "Lab, Hepatitis C antibody test result",
+            "HIV VIRAL LOAD",
+            "Lab, CD4 COUNT Data"
+          ]
+        }
+      },
+      "LabResultsPregnancyTests": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_LAB_PREGNANCY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 20,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Lab Results Pregnancy Template",
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "conceptNames": [
+            "Lab, Pregnancy test result"
+          ]
+        }
+      },
+      "LabResultsOtherTests": {
+        "displayType": "Full-Page",
+        "translationKey": "SUMMARY_TITLE_LAB_OTHER_TESTS",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 21,
+        "dashboardConfig": {
+          "pivotOn": "row",
+          "templateName": "Lab Results Other Tests Template",
+          "groupByConcept": "Specimen Collection Date",
+          "type": "DstExtension",
+          "conceptNames": [
+            "Lab, Other test name",
+            "Lab, Other test result"
+          ]
+        }
+      },
+      "adverseEvents": {
+        "translationKey": "SUMMARY_TITLE_ADVERSE_EVENTS",
+        "type": "obsToObsFlowSheet",
+        "displayType": "Full-Page",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 22,
+        "dashboardConfig": {
+          "groupByConcept": "AE Form, AE term comprehensive list",
+          "templateName": "Adverse Events Template",
+          "conceptNames": [
+            "AE Form, Other AE term",
+	    "AE Form, AE ID number",
+            "AE Form, SAE Case Number",
+            "AE Form, Date of AE onset",
+            "AE Form, AE Grade",
+            "AE Form, AE review date",
+            "AE Form, AE severity at review",
+            "AE Form, Maximum severity of AE",
+            "AE Form, Date of AE Outcome",
+            "AE Form, AE outcome"
+          ]
+        }
+      },
+      "seriousAdverseEvents": {
+        "translationKey": "SUMMARY_TITLE_SERIOUS_ADVERSE_EVENTS",
+        "type": "obsToObsFlowSheet",
+        "displayType": "Full-Page",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayOrder": 23,
+        "dashboardConfig": {
+          "groupByConcept": "SAE Form, SAE term comprehensive AE list",
+          "templateName": "Serious Adverse Events Template",
+          "conceptNames": [
+            "SAE Form, Other SAE term",
+	    "SAE Form, SAE ID number",
+            "SAE Form, AE ID if previously reported as AE",
+            "SAE Form, Event onset date",
+            "SAE Form, Date event became serious",
+            "SAE Form, SAE severity grade",
+            "SAE Form, SAE review date",
+            "SAE Form, SAE severity at review",
+            "SAE Form, Maximum severity of SAE",
+            "SAE Form, Event end date",
+            "SAE Form, SAE outcome"
+          ]
+        }
+      },
+      "nontbTreatmentsDetails": {
+        "translationKey": "DASHBOARD_TITLE_NONTB_TREATMENTS_DETAILS",
+        "type": "drugOrderDetails",
+        "displayType": "Full-Page",
+        "showDetailsButton": true,
+        "displayOrder": 24,
+        "dashboardConfig": {
+          "showOnlyActive": false,
+          "drugConceptSet": "All Other Drugs"
+        }
+      },
+      "ecgReadings": {
+        "translationKey": "SUMMARY_TITLE_ECG_READINGS",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "Full-Page",
+        "displayOrder": 25,
+        "dashboardConfig": {
+          "groupByConcept": "EKG, Date of EKG",
+          "type": "EcgReadingsExtension",
+          "templateName": "Electrocardiogram Template",
+          "conceptNames": [
+            "EKG, Type of assessment",
+            "EKG, Rhythm",
+            "EKG, Heart Rate",
+            "EKG, QT Interval",
+            "EKG, QTcF Interval"
+          ]
+        }
+      },
+      "chestXray": {
+        "translationKey": "SUMMARY_TITLE_CHEST_XRAY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "Full-Page",
+        "displayOrder": 26,
+        "dashboardConfig": {
+          "groupByConcept": "Xray, Chest Xray Date",
+          "type": "ChestXRayExtension",
+          "templateName": "Xray Template",
+          "conceptNames": [
+            "Xray, Extent of disease",
+            "Xray, Maximum cavity size",
+            "Xray, Fibrosis"
+          ]
+        }
+      },
+      "AudioMetryDisplayLeft": {
+        "translationKey": "SUMMARY_TITLE_AUDIOMETRY_LEFT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 27,
+        "dashboardConfig": {
+          "groupByConcept": "Audiometry, Audiometry date",
+          "templateName": "Audiometry Template",
+          "conceptNames": [
+            "Audiometry, Type of assessment",
+            "Audiometry, Left ear at 1000Hz",
+            "Audiometry, Left ear at 2000Hz",
+            "Audiometry, Left ear at 4000Hz",
+            "Audiometry, Left ear at 8000Hz"
+          ]
+        }
+      },
+      "AudioMetryDisplayRight": {
+        "translationKey": "SUMMARY_TITLE_AUDIOMETRY_RIGHT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 28,
+        "dashboardConfig": {
+          "groupByConcept": "Audiometry, Audiometry date",
+          "templateName": "Audiometry Template",
+          "conceptNames": [
+            "Audiometry, Type of assessment",
+            "Audiometry, Right ear at 1000Hz",
+            "Audiometry, Right ear at 2000Hz",
+            "Audiometry, Right ear at 4000Hz",
+            "Audiometry, Right ear at 8000Hz"            
+          ]
+        }
+      },
+      "BaselineBPNSDisplayleft": {
+        "translationKey": "SUMMARY_TITLE_BASELINE_BPNS_LEFT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 29,
+        "dashboardConfig": {
+          "groupByConcept": "Baseline, Date of baseline physical examination",
+          "templateName": "Baseline, Clinical Examination",
+          "conceptNames": [
+            "Baseline, Pain Aching or Buring in Left Feet and Leg",
+            "Baseline, Pins and Needles in Left Feet and Leg",
+            "Baseline, Numbness in Left Feet and Leg",
+            "Baseline, Vibration Perception in Left",
+            "Baseline, Ankle reflexes in left"
+          ]
+        }
+      },   
+      "BaselineBPNSDisplayright": {
+        "translationKey": "SUMMARY_TITLE_BASELINE_BPNS_RIGHT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 30,
+        "dashboardConfig": {
+          "groupByConcept": "Baseline, Date of baseline physical examination",
+          "templateName": "Baseline, Clinical Examination",
+          "conceptNames": [
+            "Baseline, Pain Aching or Buring in Right Feet and Leg",
+            "Baseline, Pins and Needles in Right Feet and Leg",
+            "Baseline, Numbness in Right Feet and Leg",
+            "Baseline, Vibration Perception in Right",
+            "Baseline, Ankle reflexes in right"
+          ]
+        }
+      },
+      "FollowupBPNSDisplayLeft": {
+        "translationKey": "SUMMARY_TITLE_Followup_BPNS_LEFT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 31,
+        "dashboardConfig": {
+          "groupByConcept": "Followup, Visit Date",
+          "templateName": "Followup Template",
+          "conceptNames": [
+            "Followup, Pain Aching or Buring in Left Feet and Leg",
+            "Followup, Pins and Needles in Left Feet and Leg",
+            "Followup, Numbness in Left Feet and Leg",
+            "Followup, Vibration Perception in Left",
+            "Followup, Ankle reflexes in left"
+          ]
+        }
+      },
+      "FollowupBPNSDisplayright": {
+        "translationKey": "SUMMARY_TITLE_Followup_BPNS_RIGHT",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 32,
+        "dashboardConfig": {
+          "groupByConcept": "Followup, Visit Date",
+          "templateName": "Followup Template",
+          "conceptNames": [
+            "Followup, Pain Aching or Buring in Right Feet and Leg",
+            "Followup, Pins and Needles in Right Feet and Leg",
+            "Followup, Numbness in Right Feet and Leg",
+            "Followup, Vibration Perception in Right",
+            "Followup, Ankle reflexes in right"
+          ]
+        }
+      },      
+      "FollowupAcuityDisplay": {
+        "translationKey": "SUMMARY_TITLE_FOLLOWUP_ACUITY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 35,
+        "dashboardConfig": {
+          "groupByConcept": "Followup, Visit Date",
+          "templateName": "Followup Template",
+          "conceptNames": [
+            "Visual acuity, left eye",
+            "Visual acuity, right eye"            
+          ]
+        }
+      },
+      "BaselineAcuityDisplay": {
+        "translationKey": "SUMMARY_TITLE_BASELINE_ACUITY",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 33,
+        "dashboardConfig": {
+          "groupByConcept": "Baseline, Date of baseline physical examination",
+          "templateName": "Baseline, Clinical Examination",
+          "conceptNames": [
+            "Visual acuity, left eye",
+            "Visual acuity, right eye"            
+          ]
+        }
+      },
+      "BaselineIshiharaDisplay": {
+        "translationKey": "SUMMARY_TITLE_BASELINE_ISHIHARA",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 34,
+        "dashboardConfig": {
+          "groupByConcept": "Baseline, Date of baseline physical examination",
+          "templateName": "Baseline, Clinical Examination",
+          "conceptNames": [
+            "Baseline, Left Eye Correct Plates",
+            "Baseline, Right Eye Correct Plates"            
+          ]
+        }
+      },
+      "FollowupIshiharaDisplay": {
+        "translationKey": "SUMMARY_TITLE_FOLLOWUP_ISHIHARA",
+        "type": "obsToObsFlowSheet",
+        "headingConceptSource": "Abbreviation",
+        "dataConceptSource": "Abbreviation",
+        "displayType": "LAYOUT_50_50",
+        "displayOrder": 36,
+        "dashboardConfig": {
+          "groupByConcept": "Followup, Visit Date",
+          "templateName": "Followup Template",
+          "conceptNames": [
+            "Followup, Left Eye Correct Plates",
+            "Followup, Right Eye Correct Plates"            
+          ]
+        }
+      }
+    },
+    "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY"
+  }
+}
