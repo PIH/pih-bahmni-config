@@ -1,0 +1,10 @@
+{
+    "userName": "Имя пользователя",
+    "password": "пароль",
+    "location": "Место нахождения",
+    "login": "Авторизоваться",
+    "selectLocation": "Выбрать Место нахождения",
+    "clinical_key": "Клинический",
+    "MESSAGE_DIALOG_OPTION_COPY": "Ошибка копирования",
+    "MESSAGE_DIALOG_OPTION_OKAY": "ОК"
+}
