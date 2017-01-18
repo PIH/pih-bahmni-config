@@ -1,0 +1,17 @@
+{
+    "BAHMNI_PAGE_TITLE_KEY": "Inicio Bahmni ",
+    "LOGIN_LABEL_LOGIN_KEY": "Iniciar sesión",
+    "LOGIN_LABEL_USERNAME_KEY": "Nombre de usuario",
+    "LOGIN_LABEL_PASSWORD_KEY": "Contraseña",
+    "LOGIN_LABEL_LOCATION_KEY": "Ubicación",
+    "LOGIN_LABEL_LOGIN_ERROR_MESSAGE_KEY": "No está autenticado o su sesión ha finalizado . Por favor Iniciar sesión.",
+    "LOGIN_MESSAGE_ENTER_USERNAME_KEY": "Ingrese su nombre de usuario",
+    "LOGIN_MESSAGE_ENTER_PASSWORD_KEY": "Introduzca su contraseña",
+    "LOGIN_LABEL_SELECT_LOCATION_KEY": "Seleccionar ubicación",
+    "LOGIN_LABEL_SELECT_LOCALE_KEY": "Seleccione idioma",
+    "HEADER_LABEL_LOGOUT_KEY": "Cerrar sesión",
+    "HEADER_LABEL_SYNC_KEY": "Sincronizar",
+    "MESSAGE_DIALOG_OPTION_COPY": "Copia Error",
+    "MESSAGE_DIALOG_OPTION_OKAY": "OK",
+    "MESSAGE_START_OPENMRS": "El servicio de OpenMRS actualmente no esta disponible. Por favor verifique si el servicio ha empezado y refresque la pagina una vez que regrese"
+}

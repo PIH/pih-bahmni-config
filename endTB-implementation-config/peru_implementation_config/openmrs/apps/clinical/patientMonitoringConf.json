@@ -1,0 +1,186 @@
+{
+  "milestones": [
+    {
+      "name": "M1",
+      "min": 0,
+      "max": 30,
+      "entities": {
+        "clinical": {
+          "singleConcepts": [
+            "Baseline, Prison"
+          ],
+          "groupConcepts": {
+            "groupconcept": [
+              "Height (cm)",
+              "Weight (kg)"
+            ]
+          }
+        },
+        "bacteriology": {
+          "singleConcepts": [
+            "Bacteriology, Fluoroquinolone"
+          ],
+          "groupConcepts": {}
+        },
+        "drugs": {
+          "singleConcepts": [
+            "Isoniazid"
+          ],
+          "groupConcepts": {}
+        }
+      }
+    },
+    {
+      "name": "M2",
+      "min": 31,
+      "max": 60
+    },
+    {
+      "name": "M3",
+      "min": 61,
+      "max": 90,
+      "entities": {
+        "clinical": {
+          "singleConcepts": [],
+          "groupConcepts": {}
+        },
+        "bacteriology": {
+          "singleConcepts": [
+            "Bacteriology, Fluoroquinolone"
+          ],
+          "groupConcepts": {}
+        },
+        "drugs": {
+          "singleConcepts": [
+            "Isoniazid"
+          ],
+          "groupConcepts": {}
+        }
+      }
+    },
+    {
+      "name": "M4",
+      "min": 91,
+      "max": 120,
+      "entities": {
+        "clinical": {
+          "singleConcepts": [],
+          "groupConcepts": {}
+        },
+        "bacteriology": {
+          "singleConcepts": [
+            "Bacteriology, Fluoroquinolone"
+          ],
+          "groupConcepts": {}
+        },
+        "drugs": {
+          "singleConcepts": [
+            "Isoniazid"
+          ],
+          "groupConcepts": {}
+        }
+      }
+    },
+    {
+      "name": "M5",
+      "min": 121,
+      "max": 150
+    },
+    {
+      "name": "M6",
+      "min": 151,
+      "max": 180
+    },
+    {
+      "name": "M7",
+      "min": 181,
+      "max": 210
+    },
+    {
+      "name": "M8",
+      "min": 211,
+      "max": 240
+    },
+    {
+      "name": "M9",
+      "min": 241,
+      "max": 270
+    },
+    {
+      "name": "M10",
+      "min": 271,
+      "max": 300
+    },
+    {
+      "name": "M11",
+      "min": 301,
+      "max": 330
+    },
+    {
+      "name": "M12",
+      "min": 331,
+      "max": 360
+    },
+    {
+      "name": "M13",
+      "min": 361,
+      "max": 390
+    },
+    {
+      "name": "M14",
+      "min": 391,
+      "max": 420
+    },
+    {
+      "name": "M15",
+      "min": 421,
+      "max": 450
+    },
+    {
+      "name": "M16",
+      "min": 451,
+      "max": 480
+    },
+    {
+      "name": "M17",
+      "min": 481,
+      "max": 510
+    },
+    {
+      "name": "M18",
+      "min": 511,
+      "max": 540
+    },
+    {
+      "name": "M90",
+      "min": 541,
+      "max": 570
+    },
+    {
+      "name": "M20",
+      "min": 571,
+      "max": 600
+    }
+  ],
+  "entities": {
+    "clinical": {
+      "singleConcepts": [
+        "Height (cm)",
+        "Weight (kg)"
+      ],
+      "groupConcepts": {}
+    },
+    "bacteriology": {
+      "singleConcepts": [
+        "Bacteriology, Culture results"
+      ],
+      "groupConcepts": {}
+    },
+    "drugs": {
+      "singleConcepts": [
+        "Delamanid"
+      ],
+      "groupConcepts": {}
+    }
+  }
+}

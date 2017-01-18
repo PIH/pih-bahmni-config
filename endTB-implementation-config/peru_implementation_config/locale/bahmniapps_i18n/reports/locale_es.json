@@ -1,0 +1,18 @@
+{
+    "userName": "Nombre de usuario",
+    "password": "Contraseña",
+    "location": "Ubicación",
+    "login": "\nIniciar sesión",
+    "selectLocation": "\nSeleccionar ubicación",
+    "clinical_key": "Clínico",
+    "REPORTS_NAME_HEADER_KEY": "Nombre",
+    "REPORTS_START_DATE_HEADER_KEY": "Fecha de inicio",
+    "REPORTS_END_DATE_HEADER_KEY": "Fecha final",
+    "RUN_REPORT_BUTTON_KEY": "Ejecutar informe",
+    "REPORT_FORMAT_KEY": "Formato",
+    "REPORTS_TITLE_KEY": "Informes",
+    "REPORTS_TITLE_WITHOUT_DATE_RANGE_KEY": "Informes sin intervalo de fechas",
+    "REPORTS_MISSING_WARNING_MESSAGE_KEY": "Los nuevos informes se pueden configurar en un archivo JSON dentro OpenMRS / aplicaciones / informes / reports.json . Por favor, consulte la documentación para obtener más información sobre la configuración de los informes enlatados",
+    "MESSAGE_DIALOG_OPTION_COPY": "Copia error",
+    "MESSAGE_DIALOG_OPTION_OKAY": "OK"
+}
