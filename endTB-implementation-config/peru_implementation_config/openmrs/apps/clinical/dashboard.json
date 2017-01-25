@@ -234,8 +234,7 @@
             "Baseline, Hepatitis C",
             "Lab, HIV test result",
             "Lab, Hepatitis B antigen test result",
-            "Lab, Hepatitis C antibody test result",
-            "Lab, RNA If undetactable is yes, Viral load result"
+            "Lab, Hepatitis C antibody test result"
           ],
           "scope": "latest"
         },
@@ -556,7 +555,8 @@
             "Lab, Hepatitis B antigen test result",
             "Lab, Hepatitis C antibody test result",
             "HIV VIRAL LOAD",
-            "Lab, CD4 COUNT Data"
+            "Lab, CD4 COUNT Data",
+            "Lab, RNA If undetactable is yes, Viral load result"
           ]
         }
       },
