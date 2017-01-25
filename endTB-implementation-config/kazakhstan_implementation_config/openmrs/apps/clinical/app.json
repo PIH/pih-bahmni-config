@@ -1,0 +1,37 @@
+{
+  "id": "bahmni.clinical",
+  "shouldOverRideConfig": true,
+  "extensionPoints": [
+    {
+      "id": "org.bahmni.clinical.consultation.board",
+      "description": "Bahmni Clinical Consultation Page"
+    },
+    {
+      "id": "org.bahmni.clinical.conceptSetGroup.*",
+      "description": "Define conceptsets part of a conceptset group"
+    },
+    {
+      "id": "org.bahmni.patient.search",
+      "description": "Bahmni Patient search, lookups Page"
+    }
+  ],
+  "contextModel": [
+    "patientUuid",
+    "visitUuid"
+  ],
+  "config": {
+    "defaultVisitType": "General",
+    "showSaveConfirmDialog" : true,
+    "showFormsDate" : true,
+    "obsIgnoreList": [
+      "Patient file"
+    ],
+
+ "conceptSetUI": {
+   "Lab, Calcium data":{
+        "disableAddNotes": true,
+        "isTabular": true
+        }
+}
+}
+}

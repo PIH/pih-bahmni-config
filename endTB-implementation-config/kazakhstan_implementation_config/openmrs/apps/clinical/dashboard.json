@@ -1,0 +1,112 @@
+{
+  "shouldOverRideConfig": true,
+  "general": {
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 1,
+    "sections": {
+       "adverseEvents": {
+	"translationKey": "DASHBOARD_TITLE_ADVERSE_EVENTS_SUMMARY",
+        "type": "obsToObsFlowSheet",
+	"displayType": "Full-Page",	
+        "headingConceptSource": "Abbreviation",
+        "displayOrder": 12,
+        "dashboardConfig": {
+          "isEditable": true,
+          "groupByConcept": "AE Form, AE term comprehensive list",
+          "templateName": "Adverse Events Template",
+          "conceptNames": [
+          "AE Form, Other AE term",
+ 	  "AE Form, AE ID number",
+            "AE Form, SAE Case Number",
+            "AE Form, Date of AE onset",
+            "AE Form, AE review date",
+            "AE Form, Date of AE Outcome",
+            "AE Form, AE outcome"
+          ]
+        } 
+	},
+	"seriousAdverseEvents": {
+        "translationKey": "SUMMARY_TITLE_SERIOUS_ADVERSE_EVENTS",
+        "type": "obsToObsFlowSheet",
+	"displayType": "Full-Page",
+        "headingConceptSource": "Abbreviation",
+        "displayOrder": 13,
+        "dashboardConfig": {
+          "groupByConcept": "SAE Form, SAE term comprehensive AE list",
+          "templateName": "Serious Adverse Events Template",
+          "conceptNames": [
+            "SAE Form, Other SAE term",
+	    "SAE Form, SAE ID number",
+            "SAE Form, AE ID if previously reported as AE",
+            "SAE Form, Event onset date",
+            "SAE Form, Date event became serious",
+            "SAE Form, Event end date",
+            "SAE Form, SAE outcome"
+          ]
+        }
+      }
+	}
+},
+"summary": {
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 10,
+    "printing": {
+      "title": "EndTB Patient Dashboard",
+      "header": "Patient Summary",
+      "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+	"adverseEvents": {
+        "translationKey": "SUMMARY_TITLE_ADVERSE_EVENTS",
+        "type": "obsToObsFlowSheet",
+        "displayType": "Full-Page",
+        "headingConceptSource": "Abbreviation",
+        "displayOrder": 20,
+        "dashboardConfig": {
+          "groupByConcept": "AE Form, AE term comprehensive list",
+          "templateName": "Adverse Events Template",
+          "conceptNames": [
+            "AE Form, Other AE term",
+            "AE Form, AE ID number",
+            "AE Form, SAE Case Number",
+            "AE Form, Date of AE onset",
+            "AE Form, AE Grade",
+            "AE Form, AE review date",
+            "AE Form, AE severity at review",
+            "AE Form, Maximum severity of AE",
+            "AE Form, Date of AE Outcome",
+            "AE Form, AE outcome"
+          ]
+        }
+      },
+	"seriousAdverseEvents": {
+        "translationKey": "SUMMARY_TITLE_SERIOUS_ADVERSE_EVENTS",
+        "type": "obsToObsFlowSheet",
+        "displayType": "Full-Page",
+        "headingConceptSource": "Abbreviation",
+        "displayOrder": 21,
+        "dashboardConfig": {
+          "groupByConcept": "SAE Form, SAE term comprehensive AE list",
+          "templateName": "Serious Adverse Events Template",
+          "conceptNames": [
+	    "SAE Form, Other SAE term",
+            "SAE Form, SAE ID number",
+            "SAE Form, AE ID if previously reported as AE",
+            "SAE Form, Event onset date",
+            "SAE Form, Date event became serious",
+            "SAE Form, SAE severity grade",
+            "SAE Form, SAE review date",
+            "SAE Form, SAE severity at review",
+            "SAE Form, Maximum severity of SAE",
+            "SAE Form, Event end date",
+            "SAE Form, SAE outcome",
+            "SAE Form, Related test",
+	    "SAE form, other related test"
+	    
+          ]
+        }
+      }
+      }
+
+}
+}

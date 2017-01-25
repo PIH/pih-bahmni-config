@@ -1,0 +1,18 @@
+{
+    "userName": "Имя пользователя",
+    "password": "пароль",
+    "location": "Место нахождения",
+    "login": "Авторизоваться",
+    "selectLocation": "\nВыбрать Расположение",
+    "clinical_key": "клиническая",
+    "REPORTS_NAME_HEADER_KEY": "ФИО",
+    "REPORTS_START_DATE_HEADER_KEY": "Дата начала ",
+    "REPORTS_END_DATE_HEADER_KEY": "Дата завершения",
+    "RUN_REPORT_BUTTON_KEY": "Бег Отчеты",
+    "REPORT_FORMAT_KEY": "Формат",
+    "REPORTS_TITLE_KEY": "Отчеты",
+    "REPORTS_TITLE_WITHOUT_DATE_RANGE_KEY": "Отчеты без диапазон дат",
+    "REPORTS_MISSING_WARNING_MESSAGE_KEY": "Новые отчеты могут быть сконфигурированы в файле JSon в OpenMRS / приложений / отчетов / reports.json . Пожалуйста, обратитесь к документации для получения дополнительной информации о настройке законсервированные отчетов",
+    "MESSAGE_DIALOG_OPTION_COPY": "копия ошибка",
+    "MESSAGE_DIALOG_OPTION_OKAY": "ОК"
+}
