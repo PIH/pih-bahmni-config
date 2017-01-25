@@ -195,6 +195,7 @@
             "Current month of treatment",
             "Treatment Duration",
             "TI, What is the situation of the patient?",
+	    "TI, Additional comments (about why the patient is being started on new TB drugs)",
             "TI, Indication for new TB drugs",
             "Tuberculosis treatment end date",
             "EOT, Outcome",
@@ -233,7 +234,8 @@
             "Baseline, Hepatitis C",
             "Lab, HIV test result",
             "Lab, Hepatitis B antigen test result",
-            "Lab, Hepatitis C antibody test result"
+            "Lab, Hepatitis C antibody test result",
+            "Lab, RNA If undetactable is yes, Viral load result"
           ],
           "scope": "latest"
         },

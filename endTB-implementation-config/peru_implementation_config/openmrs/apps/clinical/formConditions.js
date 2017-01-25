@@ -77,6 +77,15 @@ Bahmni.ConceptSet.FormConditions.rulesOverride  = {
             conditions.enable.push(previousAE)
         }
         return conditions;
+    },
+'Lab, RNA Viral load results Undetectable': function (formName, formFieldValues) {
+        var conditions = {enable: [], disable: []};
+        var conditionConcept = formFieldValues['Lab, RNA Viral load results Undetectable'];
+        if (conditionConcept == "True") {
+            conditions.enable.push("Lab, RNA If undetactable is yes, Viral load result")
+        } else {
+            conditions.disable.push("Lab, RNA If undetactable is yes, Viral load result")
+        }
+        return conditions;
     }
-
 }
