@@ -16,7 +16,7 @@ SELECT concept_id INTO @set_concept_id
 FROM concept_view
 WHERE concept_full_name = 'Baseline Template';
 
-CALL add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Baseline, Is the day of baseline assesment estimated?', 'Is the day of SAE onset estimated?', 'Boolean', 'Misc', FALSE);
+CALL add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Baseline, Is the day of baseline assesment estimated?', 'Is the day of baseline assessment estimated?', 'Boolean', 'Misc', FALSE);
 
 
 SET @child1_concept_id = @concept_id;
