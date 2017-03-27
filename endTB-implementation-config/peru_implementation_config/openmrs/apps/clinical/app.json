@@ -109,7 +109,7 @@
         "conciseText": true
       },
       "Baseline, Psychiatric illness type": {
-        "conciseText": true
+        "conciseText": false
       },
       "Baseline, Smear result": {
         "conciseText": true
