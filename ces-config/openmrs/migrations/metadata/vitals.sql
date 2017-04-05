@@ -11,10 +11,20 @@ call ensure_concept(@concept_id, '7eb83ffc-e42f-11e5-8c3e-08002715d519', 'All Ob
 set @obs_templates_concept_id = @concept_id;
 call ensure_concept_set_members(@obs_templates_concept_id, @vitals_concept_id, 1);
 
+-- Chief Complaint Set: new
+call ensure_concept(@concept_id, 'ef69ac69-ff1b-4d02-9a1f-c3dc56e7aa4f', 'Chief Complaint Set', 'Chief Complaint', 'N/A', 'ConvSet', true);
+set @chief_complaint_set_concept_id = @concept_id;
+call ensure_concept_set_members(@vitals_concept_id, @chief_complaint_set_concept_id, 1);
+
+-- Chief Complaint: PIH concept
+call ensure_concept(@concept_id, 'a80392d7-a0d3-4a26-bdca-123fbbc2f4cb', 'Chief Complaint', 'Chief Complaint', 'Text', 'Finding', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@chief_complaint_set_concept_id, @child_concept_id, 1);
+
 -- Height Set: Wellbody concept
 call ensure_concept(@concept_id, '86ffa474-2a7d-11e6-a94f-08002715d519', 'Height Set','Height', 'N/A', 'ConvSet', true);
 set @height_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @height_concept_id, 1);
+call ensure_concept_set_members(@vitals_concept_id, @height_concept_id, 2);
 
 --  Height Data: Wellbody concept
 call ensure_concept(@concept_id, '7414450f-2a7d-11e6-a94f-08002715d519', 'Height Data','Height', 'N/A', 'Concept Details', true);
@@ -22,7 +32,7 @@ set @Height_data_concept_id = @concept_id;
 call ensure_concept_set_members(@height_concept_id, @height_data_concept_id, 1);
 
 --  Height: PIH concept
-call ensure_concept(@concept_id, '3ce93cf2-26fe-102b-80cb-0017a47871b2', 'Height','Height', 'Numeric', 'Test', false);
+call ensure_concept(@concept_id, '3ce93cf2-26fe-102b-80cb-0017a47871b2', 'Height (cm)','Height', 'Numeric', 'Test', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@height_data_concept_id, @child_concept_id, 1);
 call ensure_concept_numeric(@child_concept_id, 228, NULL, NULL, 10, NULL, NULL, 'cm', 0, NULL);
@@ -38,7 +48,7 @@ set @weight_data_concept_id = @concept_id;
 call ensure_concept_set_members(@weight_concept_id, @weight_data_concept_id, 1);
 
 --  Weight: PIH concept
-call ensure_concept(@concept_id, '3ce93b62-26fe-102b-80cb-0017a47871b2', 'Weight','Weight', 'Numeric', 'Test', false);
+call ensure_concept(@concept_id, '3ce93b62-26fe-102b-80cb-0017a47871b2', 'Weight (kg)','Weight', 'Numeric', 'Test', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@weight_data_concept_id, @child_concept_id, 1);
 call ensure_concept_numeric(@child_concept_id, 250, NULL, NULL, 0.1, NULL, NULL, 'kg', 0, NULL);
@@ -47,6 +57,41 @@ call ensure_concept_numeric(@child_concept_id, 250, NULL, NULL, 0.1, NULL, NULL,
 call ensure_concept(@concept_id, '74c42c16-a8f9-4ce7-80ad-a0ec0184df6f', 'Weight Abnormal','Weight Abnormal', 'Boolean', 'Abnormal', false);
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@weight_data_concept_id, @child_concept_id, 2);
+
+
+-- BMI Data: new
+call ensure_concept(@concept_id, 'b17f335e-27a2-4cfd-a61a-89b46f171139', 'BMI', 'BMI', 'N/A', 'Concept Details', true);
+set @bmi_data_concept_id = @concept_id;
+-- call ensure_concept_set_members(@bmi_set_concept_id, @bmi_data_concept_id, 1);
+
+--  BMI: PIH concept
+call ensure_concept(@concept_id, '3ce14da8-26fe-102b-80cb-0017a47871b2', 'Body mass index','Body mass index', 'Numeric', 'Computed', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_numeric(@child_concept_id, NULL, NULL, NULL, 0, 18.5, NULL, NULL, 1, 1);
+call ensure_concept_set_members(@bmi_data_concept_id, @child_concept_id, 2);
+
+-- BMI Abnormal: new
+call ensure_concept(@concept_id, 'c7e8568b-6136-4c14-9ce3-d49ec3e595a2', 'BMI Abnormal','BMI Abnormal', 'Boolean', 'Abnormal', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@bmi_data_concept_id, @child_concept_id, 2);
+
+
+-- BMI Status Data: new
+call ensure_concept(@concept_id, '750b2758-9515-4858-82b7-47f510351495', 'BMI Status', 'BMI Status', 'N/A', 'Concept Details', true);
+set @bmi_status_data_concept_id = @concept_id;
+-- call ensure_concept_set_members(@bmi_set_concept_id, @bmi_status_data_concept_id, 1);
+
+--  BMI Status: new
+call ensure_concept(@concept_id, 'd5b70554-6490-4cf1-aed3-2cd23145c52f', 'Body mass index status','Body mass index status', 'Text', 'Computed', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@bmi_status_data_concept_id, @child_concept_id, 2);
+
+-- BMI Status Abnormal: new
+call ensure_concept(@concept_id, '4eb86c1a-bc5a-4383-afe2-2e334e248739', 'BMI Status Abnormal','BMI Status Abnormal', 'Boolean', 'Abnormal', false);
+set @child_concept_id = @concept_id;
+call ensure_concept_set_members(@bmi_status_data_concept_id, @child_concept_id, 2);
+
+
 
 -- Blood Pressure Set: Wellbody concept
 call ensure_concept(@concept_id, 'c36d22e6-3f10-11e4-adec-0800271c1b75', 'Blood Pressure Set','Blood Pressure', 'N/A', 'ConvSet', true);
@@ -190,8 +235,4 @@ call ensure_concept(@concept_id, 'ab33bc98-ac76-4c5d-8c51-579dc06ce657', 'Respir
 set @child_concept_id = @concept_id;
 call ensure_concept_set_members(@rr_data_concept_id, @child_concept_id, 2);
 
--- Chief Complaint: PIH concept
-call ensure_concept(@concept_id, 'a80392d7-a0d3-4a26-bdca-123fbbc2f4cb', 'Chief Complaint', 'Chief Complaint', 'Text', 'Finding', false);
-set @child_concept_id = @concept_id;
-call ensure_concept_set_members(@vitals_concept_id, @child_concept_id, 10);
 

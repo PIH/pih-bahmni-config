@@ -27,6 +27,14 @@
                     }
                 ]
             },
+            "diagnosis": {
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+                "type": "diagnosis",
+                "showCertainty": true,
+                "showOrder": true,
+                "showDetailsButton": true,
+                "displayOrder": 1
+            },
             "patientInformation": {
                 "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type": "patientInformation",
@@ -40,13 +48,15 @@
                     "countryDistrict"
                 ]
             },
-            "diagnosis": {
-                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "type": "diagnosis",
-                "showCertainty": true,
-                "showOrder": true,
-                "showDetailsButton": true,
-                "displayOrder": 1
+            "medicationDetails": {
+                "translationKey": "DASHBOARD_TITLE_ACTIVE_MEDICATIONS",
+                "type": "drugOrderDetails",
+                "showDetailsButton" : true,
+                "displayOrder": 3,
+                "dashboardConfig": {
+                    "showOnlyActive":true,
+                    "drugConceptSet": ""
+                }
             },
             "visits": {
                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
@@ -58,17 +68,6 @@
                     "groupByVisits": true
                 }
             },
-            "medicationDetails": {
-                "translationKey": "DASHBOARD_TITLE_ACTIVE_MEDICATIONS",
-                "type": "drugOrderDetails",
-                "showDetailsButton" : true,
-                "displayOrder": 3,
-                "dashboardConfig": {
-                    "showOnlyActive":true,
-                    "drugConceptSet": ""
-                }
-            },
-
             "disposition": {
                 "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton": true,
@@ -84,13 +83,17 @@
                 "dashboardConfig": {
                     "showDetailsButton": true,
                     "conceptNames": [
-                        "Vitals"
+                        "Vitals",
+                        "BMI",
+                        "BMI Status"
                     ],
                     "numberOfVisits": 2
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
-                        "Vitals"
+                        "Vitals",
+                        "BMI",
+                        "BMI Status"
                     ],
                     "numberOfVisits": 2,
                     "showDetailsButton": true,
@@ -105,11 +108,35 @@
                     }
                 }
             },
+            "labOrdersDisplayControl": {
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+                "type": "ordersControl",
+                "orderType": "Lab Order",
+                "showDetailsButton": true,
+                "displayOrder": 7,
+                "dashboardConfig": {
+                    "conceptNames": [
+                                     "Lab Order Fulfillment Form"
+                                     ]
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                                     "Lab Order Fulfillment Form"
+                                     ],
+                    "showDetailsButton":true
+                }
+            },
+            "programs": {
+                "title":"Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type": "programs",
+                "displayOrder": 8
+            },
             "historyAndExaminations": {
                 "translationKey": "CONSULTATION_PAGE_KEY",
                 "type": "vitals",
                 "isObservation": true,
-                "displayOrder": 7,
+                "displayOrder": 9,
                 "dashboardConfig": {
                     "showDetailsButton": true,
                     "conceptNames": [
@@ -124,30 +151,6 @@
                     "numberOfVisits": 2,
                     "showDetailsButton": true,
                     "pivotTable": {}
-                }
-            },
-            "programs": {
-                "title":"Programs",
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type": "programs",
-                "displayOrder": 8
-            },
-            "labOrdersDisplayControl": {
-                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type": "ordersControl",
-                "orderType": "Lab Order",
-                "showDetailsButton": true,
-                "displayOrder": 8,
-                "dashboardConfig": {
-                    "conceptNames": [
-                        "Lab Order Fulfillment Form"
-                    ]
-                },
-                "expandedViewConfig": {
-                    "conceptNames": [
-                        "Lab Order Fulfillment Form"
-                    ],
-                    "showDetailsButton":true
                 }
             }
         }
