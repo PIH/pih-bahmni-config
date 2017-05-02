@@ -117,4 +117,10 @@
         <sql>DROP PROCEDURE IF EXISTS ensure_program_workflow_state;</sql>
         <sqlFile path="ensure_program_workflow_state.sql" splitStatements="false" relativeToChangelogFile="true"/>
     </changeSet>
+    
+    <changeSet id="ensure_concept_class" author="PIH" runAlways="true" runOnChange="true">
+        <comment>Drop and re-create ensure_concept_class state procedure</comment>
+        <sql>DROP PROCEDURE IF EXISTS ensure_concept_class;</sql>
+        <sqlFile path="ensure_concept_class.sql" splitStatements="false" relativeToChangelogFile="true"/>
+    </changeSet>
 </databaseChangeLog>

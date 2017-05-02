@@ -689,7 +689,11 @@
           "conceptNames": [
             "Xray, Extent of disease",
             "Xray, Maximum cavity size",
-            "Xray, Fibrosis"
+            "Xray, Fibrosis", 
+	    "Xray, Comparison with last Xray",
+            "Xray, Other test name",
+	    "Xray, Result of Other Test"
+
           ]
         }
       },
@@ -870,8 +874,24 @@
             "Followup, Right Eye Correct Plates"            
           ]
         }
-      }
-    },
-    "translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY"
-  }
+      },
+"otherRadiologicalTests": {
+      "translationKey": "SUMMARY_TITLE_OTHER_RADIOLOGICAL_TEST",
+        "type": "otherradiologicaltests",
+        "isObservation": true,
+        "displayType": "Full-Page",
+        "displayOrder": 37,
+        "dashboardConfig": {
+          "showGroupDateTime": false,
+          "templateName": "Xray Template",
+          "conceptNames": [
+            "Xray, Comparison with last Xray",
+            "Xray, Other test name",
+            "Xray, Result of Other Test"
+]
+}
+}
+},
+"translationKey": "DASHBOARD_TAB_PATIENT_SUMMARY_KEY"
+}
 }
