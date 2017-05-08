@@ -1,0 +1,12 @@
+call pih_concept_reference_map("vl_undectect_results","Undetectable, If viral load results are undetectable, write the result here (for example, '< 20')","a321d00c-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("tsh_undetect_results","Undetectable, If TSH is undetectable, write the result here (for example, '< 20')","a321d0ca-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("birth_date_est","Is the date of birth estimated?","a3220612-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("birth_day_est","Is the day of birth estimated?","a32207c0-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("birth_month_est","Is the month of birth estimated?","a3220cca-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("birth_year_est","Is the year of birth estimated?","a3220e46-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("drug_name_for_est_date","Drug name with estimated dates","a322112a-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("drug_stdate","Estimated Drug start date","a3221288-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("drug_stdate_est","Is the drug start date estimated?","a32213fa-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("drug_stday_est","Is the day of drug start date estimated?","a322159e-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("drug_stmonth_est","Is the month of drug start date estimated?","a3221af8-1f9c-11e7-93ae-92361f002671");
+call pih_concept_reference_map("drug_styear_est","Is the year of drug start date estimated?","a3221ce2-1f9c-11e7-93ae-92361f002671");
