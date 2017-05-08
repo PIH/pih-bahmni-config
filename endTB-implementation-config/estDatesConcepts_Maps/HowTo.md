@@ -1,4 +1,5 @@
 cd $directoryName
+
 mysqldump -u<user> -p<password> --delimiter="//" dbName < pih_concept_reference_map.sql
 
 mysqldump -u<user> -p<password> --delimiter="//" dbName < pih_concept_reference_term.sql
