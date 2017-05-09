@@ -55,13 +55,14 @@ At regular intervals, we should pull in any new changes to the *bahmni/release-x
 
 1) Make sure you have no uncommitted changes.  
 
-2) Check out your local *release-x* branch.  (If you don't have a local *release-x* branch, checkout *pih/release-x* as new 
+2) Check out *bahmni/release-x* as a local branch (my convention is to name it *bahmni-release-x*).  Pull in any upstream changes.
+
+3) Check out your local *release-x* branch.  (If you don't have a local *release-x* branch, checkout *pih/release-x* as new 
 local branch *release-x*.)
 
-3) Merge *bahmni/release-x* into your local *release-x*.  (Question: does one have to do anything specific (git fetch?) to make
-sure that the *bahmni/release-x* branch is up-to-date with any remote changes?)
+4) Merge the local branch you checked out from *bahmni/release-x* into your local *release-x*.
 
-4) Push your local *release-x* up to *pih/release-x*.
+5) Push your local *release-x* up to *pih/release-x*.
 
 ## Steps for updating Bahmni Apps when upgrading the version of Bahmni we are using
 
