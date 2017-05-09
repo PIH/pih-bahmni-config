@@ -73,13 +73,13 @@
                 "showDetailsButton": true,
                 "type": "disposition",
                 "numberOfVisits": 1,
-                "displayOrder": 5
+                "displayOrder": 8
             },
             "vitals": {
                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                 "type": "vitals",
                 "isObservation": true,
-                "displayOrder": 6,
+                "displayOrder": 5,
                 "dashboardConfig": {
                     "showDetailsButton": true,
                     "conceptNames": [
@@ -108,12 +108,39 @@
                     }
                 }
             },
+            "history": {
+                "translationKey": "DASHBOARD_TITLE_HISTORY_KEY",
+                "type": "history",
+                "isObservation": true,
+                "displayOrder": 6,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "PIH History Form Concept Set"
+                    ],
+                    "numberOfVisits": 1
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "PIH History Form Concept Set"
+                    ],
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "PIH History Form Concept Set"
+                        ]
+                    }
+                }
+            },
             "labOrdersDisplayControl": {
                 "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "type": "ordersControl",
                 "orderType": "Lab Order",
                 "showDetailsButton": true,
-                "displayOrder": 7,
+                "displayOrder": 9,
                 "dashboardConfig": {
                     "conceptNames": [
                                      "Lab Order Fulfillment Form"
@@ -130,11 +157,11 @@
                 "title":"Programs",
                 "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
                 "type": "programs",
-                "displayOrder": 8
+                "displayOrder": 9
             },
             "historyAndExaminations": {
                 "translationKey": "CONSULTATION_PAGE_KEY",
-                "type": "vitals",
+                "type": "consultation",
                 "isObservation": true,
                 "displayOrder": 9,
                 "dashboardConfig": {

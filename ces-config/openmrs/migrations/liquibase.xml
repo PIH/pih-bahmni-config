@@ -49,4 +49,7 @@
     <changeSet id="pih-vitals" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/vitals.sql"/>
     </changeSet>
+    <changeSet id="pih-history-form" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/history_form.sql"/>
+    </changeSet>
 </databaseChangeLog>
