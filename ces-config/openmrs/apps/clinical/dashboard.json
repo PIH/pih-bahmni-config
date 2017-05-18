@@ -179,6 +179,33 @@
                     "showDetailsButton": true,
                     "pivotTable": {}
                 }
+            },
+            "diabetes": {
+                "translationKey": "DASHBOARD_TITLE_DIABETES_FORM_KEY",
+                "type": "diabetes",
+                "isObservation": true,
+                "displayOrder": 10,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "PIH Diabetes Form Concept Set"
+                    ],
+                    "numberOfVisits": 1
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "PIH Diabetes Form Concept Set"
+                    ],
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "PIH Diabetes Form Concept Set"
+                        ]
+                    }
+                }
             }
         }
     },

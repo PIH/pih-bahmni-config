@@ -13,6 +13,7 @@
     <changeSet id="pih-locations" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/locations.sql"/>
     </changeSet>
+
     <changeSet id="pih-identifiers" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/patient_identifiers.sql"/>
     </changeSet>
@@ -52,4 +53,10 @@
     <changeSet id="pih-history-form" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/history_form.sql"/>
     </changeSet>
+<<<<<<< HEAD
+    <changeSet id="pih-diabetes-form" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/diabetes_form.sql"/>
+    </changeSet>
+=======
+>>>>>>> caa830d77b24e52f5f395740fc2b587dfe885839
 </databaseChangeLog>
