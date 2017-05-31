@@ -206,6 +206,33 @@
                         ]
                     }
                 }
+            },
+            "hypertension": {
+                "translationKey": "DASHBOARD_TITLE_HYPERTENSION_FORM_KEY",
+                "type": "hypertension",
+                "isObservation": true,
+                "displayOrder": 10,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Hypertension Form"
+                    ],
+                    "numberOfVisits": 1
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Hypertension Form"
+                    ],
+                    "numberOfVisits": 1,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "Hypertension Form"
+                        ]
+                    }
+                }
             }
         }
     },
