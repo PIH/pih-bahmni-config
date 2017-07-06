@@ -233,6 +233,36 @@
                         ]
                     }
                 }
+            },
+            "phq9": {
+                "translationKey": "DASHBOARD_TITLE_PHQ9_FORM_KEY",
+                "type": "phq9",
+                "isObservation": true,
+                "displayOrder": 12,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "PHQ-9 Form",
+                        "PHQ-9 Total Score"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "PHQ-9 Form",
+                        "PHQ-9 Total Score"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "PHQ-9 Form",
+                            "PHQ-9 Total Score"
+                        ]
+                    }
+                }
             }
         }
     },
