@@ -24,26 +24,27 @@ import org.joda.time.Months;
 
 public class BahmniObsValueCalculator implements ObsValueCalculator {
 
-    static File DEBUG_FILE = new File(OpenmrsUtil.getApplicationDataDirectory() \
+    static File DEBUG_FILE = new File(OpenmrsUtil.getApplicationDataDirectory()
     + "obscalculator/groovy_debug.txt")
 
     /* BMI constants */
-    static Double BMI_VERY_SEVERELY_UNDERWEIGHT = 16.0;
-    static Double BMI_SEVERELY_UNDERWEIGHT = 17.0;
-    static Double BMI_UNDERWEIGHT = 18.5;
-    static Double BMI_NORMAL = 25.0;
-    static Double BMI_OVERWEIGHT = 30.0;
-    static Double BMI_OBESE = 35.0;
-    static Double BMI_SEVERELY_OBESE = 40.0;
-    static Double ZERO = 0.0;
-    static String BMI_DATA_CONCEPT = "BMI";
-    static String BMI_CONCEPT = "Body mass index";
-    static String BMI_ABNORMAL_CONCEPT = "BMI Abnormal";
-    static String BMI_STATUS_DATA_CONCEPT = "BMI Status";
-    static String BMI_STATUS_CONCEPT = "Body mass index status";
-    static String BMI_STATUS_ABNORMAL_CONCEPT = "BMI Status Abnormal";
-    static String HEIGHT_CONCEPT = "Height (cm)";
-    static String WEIGHT_CONCEPT = "Weight (kg)";
+    static Double BMI_VERY_SEVERELY_UNDERWEIGHT = 16.0
+    static Double BMI_SEVERELY_UNDERWEIGHT = 17.0
+    static Double BMI_UNDERWEIGHT = 18.5
+    static Double BMI_NORMAL = 25.0
+    static Double BMI_OVERWEIGHT = 30.0
+    static Double BMI_OBESE = 35.0
+    static Double BMI_SEVERELY_OBESE = 40.0
+    static Double ZERO = 0.0
+    static String BMI_DATA_CONCEPT = "BMI"
+    static String BMI_CONCEPT = "Body mass index"
+    static String BMI_ABNORMAL_CONCEPT = "BMI Abnormal"
+    static String BMI_STATUS_DATA_CONCEPT = "BMI Status"
+    static String BMI_STATUS_CONCEPT = "Body mass index status"
+    static String BMI_STATUS_ABNORMAL_CONCEPT = "BMI Status Abnormal"
+    static String HEIGHT_CONCEPT = "Height (cm)"
+    static String WEIGHT_CONCEPT = "Weight (kg)"
+    static String VITALS_CONCEPT = "Vitals"
     public static enum BmiStatus {
         VERY_SEVERELY_UNDERWEIGHT("Very Severely Underweight"),
         SEVERELY_UNDERWEIGHT("Severely Underweight"),
@@ -52,9 +53,9 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         OVERWEIGHT("Overweight"),
         OBESE("Obese"),
         SEVERELY_OBESE("Severely Obese"),
-        VERY_SEVERELY_OBESE("Very Severely Obese");
+        VERY_SEVERELY_OBESE("Very Severely Obese")
 
-        private String status;
+        private String status
         BmiStatus(String status) {
             this.status = status
         }
@@ -66,6 +67,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     /* PHQ-9 constants */
+    static def PHQ9_FORM = "PHQ-9 Form"
+
     static def PHQ9_QUESTIONS = [
       "PHQ-9 Little interest or pleasure in doing things",
       "PHQ-9 Feeling down, depressed, or hopeless",
@@ -92,10 +95,14 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
       DEBUG_FILE.write ''
-      /*
+      if (hasObservation(VITALS_CONCEPT, bahmniEncounterTransaction)) {
+        DEBUG_FILE.append 'calculateAndAddBMI\n'
         calculateAndAddBMI(bahmniEncounterTransaction)
-      */
-      calculateAndAddPHQ9(bahmniEncounterTransaction)
+      }
+      if (hasObservation(PHQ9_FORM, bahmniEncounterTransaction)) {
+        DEBUG_FILE.append 'calculateAndAddPHQ9\n'
+        calculateAndAddPHQ9(bahmniEncounterTransaction)
+      }
     }
 
     /* PHQ-9 methods */
@@ -106,6 +113,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
       BahmniObservation phq9QObs, phq9TotalScoreObs
       Date phq9TotalScoreDatetime
 
+      /* calculate PHQ-9 score based on each answer */
       for (int i = 0; i < PHQ9_QUESTIONS.size(); i++) {
         phq9QObs = find(PHQ9_QUESTIONS[i], observations, null)
         if (!hasValue(phq9QObs)) {
@@ -116,18 +124,37 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
       }
 
       if (!incompleteQuestionnaire) {
-        // get date of one of the observations
+        /* get date of one of the observations, null for new observations */
         phq9TotalScoreDatetime = getDate(phq9QObs)
-        createOrUpdateOpenmrsObsNumeric(PHQ9_TOTAL_SCORE,
-          encounter.getEncounterUuid(), encounter.getPatientUuid(),
-          phq9TotalScore, phq9TotalScoreDatetime)
+        if (phq9TotalScoreDatetime == null) {
+          phq9TotalScoreDatetime = new Date()
+        }
+
+        if (encounter.getEncounterUuid() == null) {
+          /* this is a new encounter, create score observation using bahmni
+          api */
+          phq9TotalScoreObs = createObs(PHQ9_TOTAL_SCORE, null, encounter,
+            phq9TotalScoreDatetime) as BahmniObservation
+          phq9TotalScoreObs.setValue(phq9TotalScore)
+        }
+        else {
+          /* this is an existing encounter, update score observation
+          by searching for it using openmrs api, since it does not get paassed
+          through bahmniEncounterTransaction */
+          updateOpenmrsObs(PHQ9_TOTAL_SCORE,
+            encounter.getEncounterUuid(), encounter.getPatientUuid(),
+            phq9TotalScore, null, phq9TotalScoreDatetime)
+        }
       }
     }
 
+    /* get score for a single PHQ-9 question */
     static def getPHQ9AnswerScore(BahmniObservation obs) {
       int score = 3
+      String answerName = obs.getValue().displayString;
+      DEBUG_FILE.append answerName + '\n'
       for (int j = 0; j < PHQ9_ANSWERS.size(); j++) {
-        if (PHQ9_ANSWERS[j][0].equalsIgnoreCase(obs.getValue().name.toString())) {
+        if (PHQ9_ANSWERS[j][0].equalsIgnoreCase(answerName)) {
           score = PHQ9_ANSWERS[j][1]
           break
         }
@@ -136,26 +163,41 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     /* BMI methods */
-    static def calculateAndAddBMI(BahmniEncounterTransaction bahmniEncounterTransaction) {
-        Collection<BahmniObservation> observations = bahmniEncounterTransaction.getObservations()
-        def nowAsOfEncounter = bahmniEncounterTransaction.getEncounterDateTime() != null ? bahmniEncounterTransaction.getEncounterDateTime() : new Date();
+    static def calculateAndAddBMI(BahmniEncounterTransaction encounter) {
+        Collection<BahmniObservation> observations = encounter.getObservations()
+        def nowAsOfEncounter = encounter.getEncounterDateTime() != null ?
+        encounter.getEncounterDateTime() : new Date();
 
-        BahmniObservation heightObservation = find(HEIGHT_CONCEPT, observations, null)
-        BahmniObservation weightObservation = find(WEIGHT_CONCEPT, observations, null)
+        BahmniObservation heightObservation = find(HEIGHT_CONCEPT, observations,
+          null)
+        BahmniObservation weightObservation = find(WEIGHT_CONCEPT, observations,
+          null)
 
         if (hasValue(heightObservation) || hasValue(weightObservation)) {
-            BahmniObservation bmiDataObservation = find(BMI_DATA_CONCEPT, observations, null)
-            BahmniObservation bmiObservation = find(BMI_CONCEPT, bmiDataObservation ? [bmiDataObservation] : [], null)
-            BahmniObservation bmiAbnormalObservation = find(BMI_ABNORMAL_CONCEPT, bmiDataObservation ? [bmiDataObservation]: [], null)
+            BahmniObservation bmiDataObservation = find(BMI_DATA_CONCEPT,
+              observations, null)
+            BahmniObservation bmiObservation = find(BMI_CONCEPT,
+              bmiDataObservation ? [bmiDataObservation] : [], null)
+            BahmniObservation bmiAbnormalObservation = find(
+              BMI_ABNORMAL_CONCEPT, bmiDataObservation ? [bmiDataObservation]:
+              [], null)
 
-            BahmniObservation bmiStatusDataObservation = find(BMI_STATUS_DATA_CONCEPT, observations, null)
-            BahmniObservation bmiStatusObservation = find(BMI_STATUS_CONCEPT, bmiStatusDataObservation ? [bmiStatusDataObservation] : [], null)
-            BahmniObservation bmiStatusAbnormalObservation = find(BMI_STATUS_ABNORMAL_CONCEPT, bmiStatusDataObservation ? [bmiStatusDataObservation]: [], null)
+            BahmniObservation bmiStatusDataObservation = find(
+              BMI_STATUS_DATA_CONCEPT, observations, null)
+            BahmniObservation bmiStatusObservation = find(BMI_STATUS_CONCEPT,
+              bmiStatusDataObservation ? [bmiStatusDataObservation] : [], null)
+            BahmniObservation bmiStatusAbnormalObservation = find(
+              BMI_STATUS_ABNORMAL_CONCEPT, bmiStatusDataObservation ?
+              [bmiStatusDataObservation]: [], null)
 
-            Patient patient = Context.getPatientService().getPatientByUuid(bahmniEncounterTransaction.getPatientUuid())
-            def patientAgeInMonthsAsOfEncounter = Months.monthsBetween(new LocalDate(patient.getBirthdate()), new LocalDate(nowAsOfEncounter)).getMonths()
+            Patient patient = Context.getPatientService().getPatientByUuid(
+              encounter.getPatientUuid())
+            def patientAgeInMonthsAsOfEncounter = Months.monthsBetween(
+              new LocalDate(patient.getBirthdate()),
+              new LocalDate(nowAsOfEncounter)).getMonths()
 
-            if ((heightObservation && heightObservation.voided) && (weightObservation && weightObservation.voided)) {
+            if ((heightObservation && heightObservation.voided)
+            && (weightObservation && weightObservation.voided)) {
                 voidObs(bmiDataObservation);
                 voidObs(bmiObservation);
                 voidObs(bmiStatusDataObservation);
@@ -164,12 +206,19 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return
             }
 
-            def previousHeightValue = fetchLatestValue(HEIGHT_CONCEPT, bahmniEncounterTransaction.getPatientUuid(), heightObservation, nowAsOfEncounter)
-            def previousWeightValue = fetchLatestValue(WEIGHT_CONCEPT, bahmniEncounterTransaction.getPatientUuid(), weightObservation, nowAsOfEncounter)
+            def previousHeightValue = fetchLatestValue(HEIGHT_CONCEPT,
+              encounter.getPatientUuid(), heightObservation, nowAsOfEncounter)
+            def previousWeightValue = fetchLatestValue(WEIGHT_CONCEPT,
+              encounter.getPatientUuid(), weightObservation, nowAsOfEncounter)
 
-            Double height = hasValue(heightObservation) && !heightObservation.voided ? heightObservation.getValue() as Double : previousHeightValue
-            Double weight = hasValue(weightObservation) && !weightObservation.voided ? weightObservation.getValue() as Double : previousWeightValue
-            Date obsDatetime = getDate(weightObservation) != null ? getDate(weightObservation) : getDate(heightObservation)
+            Double height = hasValue(heightObservation) \
+            && !heightObservation.voided ? heightObservation.getValue() \
+            as Double : previousHeightValue
+            Double weight = hasValue(weightObservation) \
+            && !weightObservation.voided ? weightObservation.getValue() \
+            as Double : previousWeightValue
+            Date obsDatetime = getDate(weightObservation) != null ?
+            getDate(weightObservation) : getDate(heightObservation)
 
             if (height == null || weight == null) {
                 voidObs(bmiDataObservation)
@@ -180,22 +229,34 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
                 return
             }
 
-            bmiDataObservation = bmiDataObservation ?: createObs(BMI_DATA_CONCEPT, null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
-            bmiStatusDataObservation = bmiStatusDataObservation ?: createObs(BMI_STATUS_DATA_CONCEPT, null, bahmniEncounterTransaction, obsDatetime) as BahmniObservation
+            bmiDataObservation = bmiDataObservation ?: createObs(
+              BMI_DATA_CONCEPT, null, encounter, obsDatetime) \
+              as BahmniObservation
+            bmiStatusDataObservation = bmiStatusDataObservation ?:
+            createObs(BMI_STATUS_DATA_CONCEPT, null, encounter,
+              obsDatetime) as BahmniObservation
 
             def bmi = bmi(height, weight)
-            bmiObservation = bmiObservation ?: createObs(BMI_CONCEPT, bmiDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiObservation = bmiObservation ?: createObs(BMI_CONCEPT,
+              bmiDataObservation, encounter, obsDatetime) as BahmniObservation;
             bmiObservation.setValue(bmi);
 
-            def bmiStatus = bmiStatus(bmi, patientAgeInMonthsAsOfEncounter, patient.getGender());
-            bmiStatusObservation = bmiStatusObservation ?: createObs(BMI_STATUS_CONCEPT, bmiStatusDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            def bmiStatus = bmiStatus(bmi, patientAgeInMonthsAsOfEncounter,
+              patient.getGender());
+            bmiStatusObservation = bmiStatusObservation ?: createObs(
+              BMI_STATUS_CONCEPT, bmiStatusDataObservation, encounter,
+              obsDatetime) as BahmniObservation;
             bmiStatusObservation.setValue(bmiStatus);
 
             def bmiAbnormal = bmiAbnormal(bmiStatus);
-            bmiAbnormalObservation =  bmiAbnormalObservation ?: createObs(BMI_ABNORMAL_CONCEPT, bmiDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiAbnormalObservation =  bmiAbnormalObservation ?: createObs(
+              BMI_ABNORMAL_CONCEPT, bmiDataObservation, encounter, obsDatetime)\
+              as BahmniObservation;
             bmiAbnormalObservation.setValue(bmiAbnormal);
 
-            bmiStatusAbnormalObservation =  bmiStatusAbnormalObservation ?: createObs(BMI_STATUS_ABNORMAL_CONCEPT, bmiStatusDataObservation, bahmniEncounterTransaction, obsDatetime) as BahmniObservation;
+            bmiStatusAbnormalObservation =  bmiStatusAbnormalObservation ?:
+            createObs(BMI_STATUS_ABNORMAL_CONCEPT, bmiStatusDataObservation,
+              encounter, obsDatetime) as BahmniObservation;
             bmiStatusAbnormalObservation.setValue(bmiAbnormal);
 
             return
@@ -208,7 +269,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
             new File(fileName).withReader { reader ->
                 def header = reader.readLine();
                 reader.splitEachLine(",") { tokens ->
-                    chart.add(new BMIChartLine(tokens[0], tokens[1], tokens[2], tokens[3], tokens[4], tokens[5]));
+                    chart.add(new BMIChartLine(tokens[0], tokens[1], tokens[2],
+                      tokens[3], tokens[4], tokens[5]));
                 }
             }
         } catch (FileNotFoundException e) {
@@ -218,17 +280,21 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     static def bmi(Double height, Double weight) {
         if (height == ZERO) {
-            throw new IllegalArgumentException("Please enter Height greater than zero")
+            throw new IllegalArgumentException(
+              "Please enter Height greater than zero")
         } else if (weight == ZERO) {
-            throw new IllegalArgumentException("Please enter Weight greater than zero")
+            throw new IllegalArgumentException(
+              "Please enter Weight greater than zero")
         }
         Double heightInMeters = height / 100;
         Double value = weight / (heightInMeters * heightInMeters);
-        return new BigDecimal(value).setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        return new BigDecimal(value).setScale(2,
+          BigDecimal.ROUND_HALF_UP).doubleValue();
     };
 
     static def bmiStatus(Double bmi, Integer ageInMonth, String gender) {
-        BMIChart bmiChart = readCSV(OpenmrsUtil.getApplicationDataDirectory() + "obscalculator/BMI_chart.csv");
+        BMIChart bmiChart = readCSV(OpenmrsUtil.getApplicationDataDirectory()
+        + "obscalculator/BMI_chart.csv");
         def bmiChartLine = bmiChart.get(gender, ageInMonth);
         if(bmiChartLine != null ) {
             return bmiChartLine.getStatus(bmi);
@@ -273,7 +339,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         public Double eightyFifth;
         public Double ninetySeventh;
 
-        BMIChartLine(String gender, String ageInMonth, String third, String fifteenth, String eightyFifth, String ninetySeventh) {
+        BMIChartLine(String gender, String ageInMonth, String third,
+          String fifteenth, String eightyFifth, String ninetySeventh) {
             this.gender = gender
             this.ageInMonth = ageInMonth.toInteger();
             this.third = third.toDouble();
@@ -299,7 +366,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     static class BMIChart {
         List<BMIChartLine> lines;
-        Map<BMIChartLineKey, BMIChartLine> map = new HashMap<BMIChartLineKey, BMIChartLine>();
+        Map<BMIChartLineKey, BMIChartLine> map = new HashMap<BMIChartLineKey,
+        BMIChartLine>();
 
         public add(BMIChartLine line) {
             def key = new BMIChartLineKey(line.gender, line.ageInMonth);
@@ -336,14 +404,16 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         int hashCode() {
             int result
             result = (gender != null ? gender.hashCode() : 0)
-            result = 31 * result + (ageInMonth != null ? ageInMonth.hashCode() : 0)
+            result = 31 * result + (ageInMonth != null ?
+              ageInMonth.hashCode() : 0)
             return result
         }
     }
 
 
     /* common methods */
-    private static BahmniObservation obsParent(BahmniObservation child, BahmniObservation parent) {
+    private static BahmniObservation obsParent(BahmniObservation child,
+      BahmniObservation parent) {
         if (parent != null) return parent;
 
         if(child != null) {
@@ -352,11 +422,13 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     }
 
     private static Date getDate(BahmniObservation observation) {
-        return hasValue(observation) && !observation.voided ? observation.getObservationDateTime() : null;
+        return hasValue(observation) && !observation.voided ?
+        observation.getObservationDateTime() : null;
     }
 
     private static boolean hasValue(BahmniObservation observation) {
-        return observation != null && observation.getValue() != null && !StringUtils.isEmpty(observation.getValue().toString());
+        return observation != null && observation.getValue() != null \
+        && !StringUtils.isEmpty(observation.getValue().toString());
     }
 
     private static void voidObs(BahmniObservation bmiObservation) {
@@ -365,19 +437,26 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         }
     }
 
-    static BahmniObservation createObs(String conceptName, BahmniObservation parent, BahmniEncounterTransaction encounterTransaction, Date obsDatetime) {
+    static BahmniObservation createObs(String conceptName,
+      BahmniObservation parent, BahmniEncounterTransaction encounter,
+      Date obsDatetime) {
         def concept = Context.getConceptService().getConceptByName(conceptName)
         BahmniObservation newObservation = new BahmniObservation()
-        newObservation.setConcept(new EncounterTransaction.Concept(concept.getUuid(), conceptName))
+        newObservation.setConcept(new EncounterTransaction.Concept(
+          concept.getUuid(), conceptName))
         newObservation.setObservationDateTime(obsDatetime);
-        parent == null ? encounterTransaction.addObservation(newObservation) : parent.addGroupMember(newObservation)
+        parent == null ? encounter.addObservation(newObservation) :
+        parent.addGroupMember(newObservation)
         return newObservation
     }
 
-    static Double fetchLatestValue(String conceptName, String patientUuid, BahmniObservation excludeObs, Date tillDate) {
-        SessionFactory sessionFactory = Context.getRegisteredComponents(SessionFactory.class).get(0)
+    static Double fetchLatestValue(String conceptName, String patientUuid,
+      BahmniObservation excludeObs, Date tillDate) {
+        SessionFactory sessionFactory = Context.getRegisteredComponents(
+          SessionFactory.class).get(0)
         def excludedObsIsSaved = excludeObs != null && excludeObs.uuid != null
-        String excludeObsClause = excludedObsIsSaved ? " and obs.uuid != :excludeObsUuid" : ""
+        String excludeObsClause = excludedObsIsSaved ?
+        " and obs.uuid != :excludeObsUuid" : ""
         Query queryToGetObservations = sessionFactory.getCurrentSession()
                 .createQuery("select obs " +
                 " from Obs as obs, ConceptName as cn " +
@@ -402,79 +481,82 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         return null
     }
 
-    static BahmniObservation find(String conceptName, Collection<BahmniObservation> observations, BahmniObservation parent) {
+    static BahmniObservation find(String conceptName,
+      Collection<BahmniObservation> observations, BahmniObservation parent) {
         for (BahmniObservation observation : observations) {
-            // DEBUG_FILE.append 'find ' + observation.getConcept().getName() + '\n'
-
-            if (conceptName.equalsIgnoreCase(observation.getConcept().getName())) {
+            if (conceptName.equalsIgnoreCase(
+              observation.getConcept().getName())) {
                 obsParentMap.put(observation, parent);
                 return observation;
             }
-            BahmniObservation matchingObservation = find(conceptName, observation.getGroupMembers(), observation)
+            BahmniObservation matchingObservation = find(conceptName,
+              observation.getGroupMembers(), observation)
             if (matchingObservation) return matchingObservation;
         }
         return null
     }
 
+    static hasObservation(String conceptName,
+      BahmniEncounterTransaction encounter) {
+        def retBool = false
+        for (BahmniObservation o : encounter.getObservations()) {
+          if (conceptName.equalsIgnoreCase(o.getConcept().getName())) {
+            retBool = true
+            break
+          }
+        }
+        return retBool
+    }
+
     /*
       updates the observation value given by conceptName for the given encounter
-      or creates it if it doesn't already exist
     */
-    static Obs createOrUpdateOpenmrsObsNumeric(String conceptName,
-      String encounterUuid, String patientUuid, Double obsValue, Date obsDatetime) {
-        ObsService obsService = Context.getObsService()
-        EncounterService encService = Context.getEncounterService()
-        ConceptService conceptService = Context.getConceptService()
-        PersonService personService = Context.getPersonService()
-        List<Person> whom = null
-        List<Encounter> encounters = [encService.getEncounterByUuid(encounterUuid)]
-        List<Concept> questions = [conceptService.getConceptByName(PHQ9_TOTAL_SCORE)]
-        List<Concept> answers = null
-        List<OpenmrsConstants.PERSON_TYPE> personTypes = null
-        List<Location> locations = null
-        List<String> sort = null
-        Integer mostRecentN = 1
-        Integer obsGroupId = null
-        Date fromDate = null
-        Date toDate = null
-        boolean includeVoidedObs = true
-        List<Obs> encounterObs = obsService.getObservations(whom, encounters,
-          questions, answers, personTypes, locations, sort, mostRecentN,
-          obsGroupId, fromDate, toDate, includeVoidedObs)
+    static Obs updateOpenmrsObs(String conceptName,
+      String encounterUuid, String patientUuid, Double valueNumeric,
+      String valueString, Date obsDatetime) {
+        Obs returnObs = null
 
+        if (!conceptName.equals("") && encounterUuid != null
+        && patientUuid != null
+        && (valueNumeric != null || valueString != null)) {
+          ObsService obsService = Context.getObsService()
+          EncounterService encounterService = Context.getEncounterService()
+          ConceptService conceptService = Context.getConceptService()
+          PersonService personService = Context.getPersonService()
+          List<Person> whom = null
+          List<Encounter> encounters = [encounterService.getEncounterByUuid(
+            encounterUuid)]
+          List<Concept> questions = [conceptService.getConceptByName(
+            conceptName)]
+          List<Concept> answers = null
+          List<OpenmrsConstants.PERSON_TYPE> personTypes = null
+          List<Location> locations = null
+          List<String> sort = null
+          Integer mostRecentN = 1
+          Integer obsGroupId = null
+          Date fromDate = null
+          Date toDate = null
+          boolean includeVoidedObs = false
+          List<Obs> encounterObs = obsService.getObservations(whom, encounters,
+            questions, answers, personTypes, locations, sort, mostRecentN,
+            obsGroupId, fromDate, toDate, includeVoidedObs)
 
-
-        if (encounterObs.size() == 1) {
-
-          Obs oldObs = encounterObs[0]
-
-          Obs newObs = Obs.newInstance(oldObs); //copies values from oldObs 
-          newObs.setValueDatetime(obsDatetime)
-          newObs.setValueNumeric(obsValue)
-
-          newObs.setPreviousVersion(oldObs);
-          Context.getObsService().saveObs(newObs,"Your reason for the change here");
-          Context.getObsService().voidObs(oldObs, "Your reason for the change here");
-
+          if (encounterObs.size() == 1) {
+            Obs currentObs = encounterObs[0]
+            returnObs = Obs.newInstance(currentObs)
+            if (valueString != null) {
+              returnObs.setValueText(valueString)
+            }
+            if (valueNumeric != null) {
+              returnObs.setValueNumeric(valueNumeric)
+            }
+            returnObs.setObsDatetime(obsDatetime)
+            returnObs.setPreviousVersion(currentObs)
+            obsService.saveObs(returnObs,"Updated observation");
+            obsService.voidObs(currentObs, "Updated observation");
+          }
         }
-        else {
-          Obs obs = new Obs()
-          obs.setConcept(conceptService.getConceptByName(conceptName))
-          obs.setObsDatetime(obsDatetime)
-          obs.setValueNumeric(obsValue)
 
-
-
-          Person person = personService.getPersonByUuid(patientUuid)
-          obs.setPerson(person)
-
-          obs.setEncounter(encounters[0])
-
-          DEBUG_FILE.append obsDatetime.toString() + '---\n'
-
-          obsService.saveObs(obs, 'save')
-
-          DEBUG_FILE.append obsDatetime.toString() + '+++\n'
-        }
+        return returnObs
     }
 }
