@@ -24,8 +24,8 @@ import org.joda.time.Months;
 
 public class BahmniObsValueCalculator implements ObsValueCalculator {
 
-    static File DEBUG_FILE = new File(OpenmrsUtil.getApplicationDataDirectory()
-    + "obscalculator/groovy_debug.txt")
+    //static File DEBUG_FILE = new File(OpenmrsUtil.getApplicationDataDirectory()
+    //+ "obscalculator/groovy_debug.txt")
 
     /* BMI constants */
     static Double BMI_VERY_SEVERELY_UNDERWEIGHT = 16.0
@@ -94,13 +94,13 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     new HashMap<BahmniObservation, BahmniObservation>()
 
     public void run(BahmniEncounterTransaction bahmniEncounterTransaction) {
-      DEBUG_FILE.write ''
+      //DEBUG_FILE.write ''
       if (hasObservation(VITALS_CONCEPT, bahmniEncounterTransaction)) {
-        DEBUG_FILE.append 'calculateAndAddBMI\n'
+        //DEBUG_FILE.append 'calculateAndAddBMI\n'
         calculateAndAddBMI(bahmniEncounterTransaction)
       }
       if (hasObservation(PHQ9_FORM, bahmniEncounterTransaction)) {
-        DEBUG_FILE.append 'calculateAndAddPHQ9\n'
+        //DEBUG_FILE.append 'calculateAndAddPHQ9\n'
         calculateAndAddPHQ9(bahmniEncounterTransaction)
       }
     }
@@ -152,7 +152,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
     static def getPHQ9AnswerScore(BahmniObservation obs) {
       int score = 3
       String answerName = obs.getValue().displayString;
-      DEBUG_FILE.append answerName + '\n'
+      //DEBUG_FILE.append answerName + '\n'
       for (int j = 0; j < PHQ9_ANSWERS.size(); j++) {
         if (PHQ9_ANSWERS[j][0].equalsIgnoreCase(answerName)) {
           score = PHQ9_ANSWERS[j][1]

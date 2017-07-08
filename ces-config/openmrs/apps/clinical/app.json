@@ -103,6 +103,36 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "PHQ-9 Little interest or pleasure in doing things": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Feeling down, depressed, or hopeless": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Trouble falling or staying asleep, or sleeping too much": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Feeling tired or having little energy": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Poor appetite or overeating": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Feeling bad about yourself": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Trouble concentrating": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Moving or speaking slowly": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Harmful thoughts": {
+                "disableAddNotes": true
+            },
+            "PHQ-9 Difficulty Caused by Problems": {
+                "disableAddNotes": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

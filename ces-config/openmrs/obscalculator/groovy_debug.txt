@@ -1,11 +1,11 @@
 calculateAndAddBMI
 calculateAndAddPHQ9
-Not at all
-Not at all
-Not at all
-Not at all
-Not at all
-Not at all
-Not at all
 More than half the days
-Not at all
+More than half the days
+More than half the days
+More than half the days
+More than half the days
+Several days
+More than half the days
+More than half the days
+More than half the days
