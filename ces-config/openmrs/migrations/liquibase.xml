@@ -59,4 +59,7 @@
     <changeSet id="pih-hypertension-form" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/hypertension_form.sql"/>
     </changeSet>
+    <changeSet id="pih-phq9" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/phq9_form.sql"/>
+    </changeSet>
 </databaseChangeLog>
