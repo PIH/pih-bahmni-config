@@ -62,7 +62,8 @@
                 "multiSelect": true
             },
             "Medical history question" : {
-                "multiSelect": true
+                "multiSelect": true,
+                "disableAddNotes": true
             },
             "P/A Presenting Part": {
                 "multiSelect": true
@@ -132,6 +133,9 @@
             },
             "PHQ-9 Difficulty Caused by Problems": {
                 "disableAddNotes": true
+            },
+            "Side effects of anti-depressants": {
+                "multiSelect": true
             },
             "defaults": {
                 "Number of living children": 1,

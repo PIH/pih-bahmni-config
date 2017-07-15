@@ -249,6 +249,36 @@
                 },
                 "expandedViewConfig": {
                     "conceptNames": [
+                        "PHQ-9 Form",
+                        "PHQ-9 Total Score"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "PHQ-9 Total Score"
+                        ]
+                    }
+                }
+            },
+            "depression": {
+                "translationKey": "DASHBOARD_TITLE_DEPRESSION_FORM_KEY",
+                "type": "depression",
+                "isObservation": true,
+                "displayOrder": 12,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Depression Form",
+                        "PHQ-9 Total Score"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Depression Form",
                         "PHQ-9 Total Score"
                     ],
                     "numberOfVisits": 2,

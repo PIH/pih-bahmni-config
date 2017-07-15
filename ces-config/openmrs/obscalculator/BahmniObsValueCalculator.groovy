@@ -68,6 +68,7 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
 
     /* PHQ-9 constants */
     static def PHQ9_FORM = "PHQ-9 Form"
+    static def DEPRESSION_FORM = "Depression Form"
 
     static def PHQ9_QUESTIONS = [
       "PHQ-9 Little interest or pleasure in doing things",
@@ -99,7 +100,8 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
         //DEBUG_FILE.append 'calculateAndAddBMI\n'
         calculateAndAddBMI(bahmniEncounterTransaction)
       }
-      if (hasObservation(PHQ9_FORM, bahmniEncounterTransaction)) {
+      if (hasObservation(PHQ9_FORM, bahmniEncounterTransaction)
+      || hasObservation(DEPRESSION_FORM, bahmniEncounterTransaction)) {
         //DEBUG_FILE.append 'calculateAndAddPHQ9\n'
         calculateAndAddPHQ9(bahmniEncounterTransaction)
       }
@@ -515,7 +517,6 @@ public class BahmniObsValueCalculator implements ObsValueCalculator {
       String encounterUuid, String patientUuid, Double valueNumeric,
       String valueString, Date obsDatetime) {
         Obs returnObs = null
-
         if (!conceptName.equals("") && encounterUuid != null
         && patientUuid != null
         && (valueNumeric != null || valueString != null)) {
