@@ -62,4 +62,7 @@
     <changeSet id="pih-phq9" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/phq9_form.sql"/>
     </changeSet>
+    <changeSet id="pih-depression" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/depression_form.sql"/>
+    </changeSet>
 </databaseChangeLog>

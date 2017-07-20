@@ -14,7 +14,7 @@ set @phq9_concept_set = @concept_id;
 call ensure_concept_set_members(@obs_templates, @phq9_concept_set, 1);
 
 call ensure_concept(@concept_id, '6104deee-496d-11e7-8dbe-a0063c1ad1c7',
-  'PHQ-9 Problem Set', 'Problems in Last 2 weeks', 'N/A', 'ConvSet',
+  'PHQ-9 Problem Set', 'PHQ-9 Problems in Last 2 weeks', 'N/A', 'ConvSet',
   true);
 set @phq9_problem_set = @concept_id;
 insert into concept_description (concept_id, description, locale, creator,
@@ -131,7 +131,8 @@ call ensure_concept_numeric(@concept_id, 27, NULL, NULL, 0, NULL, NULL,
 
 -- Difficulty Caused by Problems
 call ensure_concept(@concept_id, '7be1084e-4a00-11e7-a9e1-f1a66b257af4',
-  'PHQ-9 Difficulty Caused by Problems Set', 'Difficulty Caused by Problems',
+  'PHQ-9 Difficulty Caused by Problems Set',
+  'PHQ-9 Difficulty Caused by Problems',
   'N/A', 'ConvSet', true);
 set @phq9_problem_difficulty_set = @concept_id;
 call ensure_concept_set_members(@phq9_concept_set, @phq9_problem_difficulty_set,

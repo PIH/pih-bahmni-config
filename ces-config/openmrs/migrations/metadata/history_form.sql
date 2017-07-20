@@ -239,18 +239,12 @@ call ensure_concept(@concept_id, '79C342C6-A886-4945-A268-FF74096EC3AA',
 set @medical_history_id = @concept_id;
 call ensure_concept_set_members(@history_form_id, @medical_history_id, 3);
 
-call ensure_concept(@concept_id, '9030046F-7EE6-4387-A2E6-4FB28E428F90',
-  'Medical history details','Medical History', 'N/A', 'Concept Details', true);
-set @medical_history_data_id = @concept_id;
-
 -- Medical history question
 call ensure_concept(@concept_id, '3706DC6C-7373-4786-A93D-9119BE27ABE1',
-  'Medical history question','Medical history question', 'Coded', 'Misc', false)
-  ;
+  'Medical history question','Medical history question', 'Coded', 'Question',
+  false);
 set @medical_history_question_id = @concept_id;
 call ensure_concept_set_members(@medical_history_id,
-  @medical_history_data_id, 1);
-call ensure_concept_set_members(@medical_history_data_id,
   @medical_history_question_id, 1);
 
 call ensure_concept_answer (@medical_history_question_id, @asthma_diagnosis_id,
@@ -281,8 +275,8 @@ call ensure_concept_answer (@medical_history_question_id,
   @tuberculosis_diagnosis_id, 14);
 call ensure_concept_answer(@medical_history_question_id,
   @varicella_diagnosis_id, 15);
-  call ensure_concept_answer(@medical_history_question_id,
-    @other_id, 16);
+
+call ensure_concept_set_members(@medical_history_id, @other_text_id, 2);
 
 -- 4. Blood type: all except ConvSet are PIH concepts
 call ensure_concept(@concept_id, '675dc583-2f68-11e7-98c0-0800272f72ea',
@@ -384,6 +378,8 @@ call ensure_concept_answer(@smoking_history_question_id, @never_id, 3);
 call ensure_concept(@concept_id, 'c95b4e78-8c11-4488-a708-49efe87a6aef',
   'Number of cigarettes smoked per day', 'Number of cigarettes smoked per day',
   'Numeric', 'Finding', false);
+call ensure_concept_numeric(@concept_id, NULL, NULL, NULL, 0, NULL, NULL, NULL,
+  0, NULL);
 call ensure_concept_set_members(@habits_id, @concept_id, 2);
 
 -- 6.b. Alcohol Question data
@@ -427,17 +423,25 @@ call ensure_concept_set_members(@ob_gyn_set_id, @concept_id, 7);
 -- PIH concepts
 call ensure_concept(@concept_id, '3cee82de-26fe-102b-80cb-0017a47871b2',
   'Gravida', 'Times pregnant', 'Numeric', 'Question', false);
+call ensure_concept_numeric(@concept_id, NULL, NULL, NULL, 0, NULL, NULL, NULL,
+  0, NULL);
 call ensure_concept_set_members(@ob_gyn_set_id, @concept_id, 3);
 call ensure_concept(@concept_id, '3cd6dda0-26fe-102b-80cb-0017a47871b2',
   'Parity', 'Times delivered', 'Numeric', 'Question', false);
+call ensure_concept_numeric(@concept_id, NULL, NULL, NULL, 0, NULL, NULL, NULL,
+  0, NULL);
 call ensure_concept_set_members(@ob_gyn_set_id, @concept_id, 4);
 call ensure_concept(@concept_id, '5bf905d4-a4ad-446f-949d-0922637b153f',
   'Number of caesarian sections', 'Number of c-sections', 'Numeric', 'Question',
   false);
+call ensure_concept_numeric(@concept_id, NULL, NULL, NULL, 0, NULL, NULL, NULL,
+  0, NULL);
 call ensure_concept_set_members(@ob_gyn_set_id, @concept_id, 5);
 call ensure_concept(@concept_id, '90b53ac5-5052-42af-8766-7f7f7453c292',
   'Number of abortions/miscarriages', 'Number of abortions/miscarriages',
   'Numeric', 'Question', false);
+call ensure_concept_numeric(@concept_id, NULL, NULL, NULL, 0, NULL, NULL, NULL,
+  0, NULL);
 call ensure_concept_set_members(@ob_gyn_set_id, @concept_id, 6);
 call ensure_concept(@concept_id, '163267AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
   'Date of last PAP test', 'Date of last PAP test', 'Date', 'Question', false);
@@ -453,6 +457,8 @@ call ensure_concept_set_members(@history_form_id, @hospitalizations_id, 8);
 call ensure_concept(@concept_id, '3cef0e02-26fe-102b-80cb-0017a47871b2',
   'Number of hospitalizations in past year',
   'Number of hospitalizations in past year', 'Numeric', 'Question', false);
+call ensure_concept_numeric(@concept_id, NULL, NULL, NULL, 0, NULL, NULL, NULL,
+  0, NULL);
 call ensure_concept_set_members(@hospitalizations_id, @concept_id, 1);
 call ensure_concept(@concept_id, 'd07e5399-b91e-43cd-95df-0dc669f5e76e',
   'Days since last hospitalization', 'Days since last hospitalization',
