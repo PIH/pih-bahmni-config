@@ -318,6 +318,33 @@
                         ]
                     }
                 }
+            },
+            "pregnancyGeneral": {
+                "translationKey": "DASHBOARD_TITLE_PREGNANCY_FORM_KEY",
+                "type": "pregnancy",
+                "isObservation": true,
+                "displayOrder": 14,
+                "dashboardConfig": {
+                    "showDetailsButton": true,
+                    "conceptNames": [
+                        "Pregnancy Form"
+                    ],
+                    "numberOfVisits": 2
+                },
+                "expandedViewConfig": {
+                    "conceptNames": [
+                        "Pregnancy Form"
+                    ],
+                    "numberOfVisits": 2,
+                    "showDetailsButton": true,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "encounters",
+                        "obsConcepts": [
+                            "Pregnancy Form"
+                        ]
+                    }
+                }
             }
         }
     },
