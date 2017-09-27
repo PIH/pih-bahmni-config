@@ -137,6 +137,12 @@
             "Side effects of anti-depressants": {
                 "multiSelect": true
             },
+            "First Trimester Visit Set": {
+                "allowAddMore": true
+            },
+            "Second/Third Trimester Visit Set": {
+                "allowAddMore": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [

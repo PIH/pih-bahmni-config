@@ -68,4 +68,22 @@
     <changeSet id="pih-asthma" author="PIH" runAlways="true" runOnChange="true">
         <sqlFile path="metadata/asthma_form.sql"/>
     </changeSet>
+    <changeSet id="pih-pregnancy-general" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/pregnancy_form_general.sql"/>
+    </changeSet>
+    <changeSet id="pih-pregnancy-1st" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/pregnancy_form_1st_trimester.sql"/>
+    </changeSet>
+    <changeSet id="pih-pregnancy-2nd" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/pregnancy_form_2nd_trimester.sql"/>
+    </changeSet>
+    <changeSet id="pih-pregnancy-3rd" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/pregnancy_form_3rd_trimester.sql"/>
+    </changeSet>
+    <changeSet id="pih-pregnancy-counseling" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/pregnancy_form_counseling_plan.sql"/>
+    </changeSet>
+    <changeSet id="pih-pregnancy-postpartum" author="PIH" runAlways="true" runOnChange="true">
+        <sqlFile path="metadata/pregnancy_form_postpartum.sql"/>
+    </changeSet>
 </databaseChangeLog>
